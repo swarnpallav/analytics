@@ -1,0 +1,130 @@
+.funnel-visualizer {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.config-section h2 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.field-config {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.field-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.field-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.steps-config h3 {
+  margin: 2rem 0 1rem 0;
+  color: #333;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.step-number {
+  background: #667eea;
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.step-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.step-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.step-actions button {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  background: #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.funnel-chart {
+  margin: 2rem 0;
+  height: 400px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.stat-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.stat-values {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value .value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.stat-value .label {
+  font-size: 0.9rem;
+  color: #666;
+}
