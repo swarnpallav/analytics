@@ -153,6 +153,54 @@
             "whatsapp_opt_in": "yes"
         }
     },
+      {
+        "screenName": "onboarding",
+        "action": "login_completed",
+        "category": "login",
+        "label": {
+            "cta": "signin"
+        }
+    },
+    {
+        "screenName": "onboarding",
+        "action": "sign_in_success",
+        "category": "login",
+        "label": {
+            "whatsapp_opt_in": "yes"
+        }
+    },
+      {
+        "screenName": "onboarding",
+        "action": "login_completed",
+        "category": "login",
+        "label": {
+            "cta": "signin"
+        }
+    },
+    {
+        "screenName": "onboarding",
+        "action": "sign_in_success",
+        "category": "login",
+        "label": {
+            "whatsapp_opt_in": "yes"
+        }
+    },
+      {
+        "screenName": "onboarding",
+        "action": "login_completed",
+        "category": "login",
+        "label": {
+            "cta": "signin"
+        }
+    },
+    {
+        "screenName": "onboarding",
+        "action": "sign_in_success",
+        "category": "login",
+        "label": {
+            "whatsapp_opt_in": "yes"
+        }
+    },
     {
         "screenName": "homeTab",
         "action": "Renewal_survey_viewed",
