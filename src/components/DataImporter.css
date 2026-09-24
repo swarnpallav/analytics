@@ -2,6 +2,7 @@
   background: white;
   border-radius: 12px;
   padding: 2rem;
+  min-width: 0;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
@@ -60,6 +61,7 @@
 
 .text-input textarea {
   width: 100%;
+  box-sizing: border-box;
   height: 200px;
   padding: 1rem;
   border: 2px solid #ddd;
@@ -77,6 +79,8 @@
 
 .input-actions {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -132,7 +136,8 @@
 
 .preview-stats {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
   margin-bottom: 1rem;
 }
 
@@ -159,4 +164,115 @@
   margin: 1rem 0 0 0;
   color: #666;
   font-style: italic;
+}
+
+.mapping-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.mapping-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0; /* grid items otherwise refuse to shrink below the widest <option> */
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.mapping-row select {
+  width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.85rem;
+}
+
+.connect-site {
+  border: 1px solid #c7d2fe;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.connect-site h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.connect-site p {
+  margin: 0 0 1rem 0;
+}
+
+.snippet {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #0f172a;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.snippet code {
+  flex: 1;
+  min-width: 0; /* let the one-line snippet scroll instead of widening the card */
+  color: #e2e8f0;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.method-toggle {
+  display: inline-flex;
+  border: 1px solid #c7d2fe;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.method-toggle button {
+  padding: 0.4rem 0.9rem;
+  border: none;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.method-toggle button.active {
+  background: #667eea;
+  color: white;
+}
+
+/* Long field paths, file names and JSON must never widen the page. */
+.import-methods > *,
+.data-preview {
+  min-width: 0;
+}
+
+.input-actions select {
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+  .data-importer {
+    padding: 1rem;
+  }
+
+  .connect-site {
+    padding: 1rem;
+  }
+
+  .dropzone {
+    padding: 1.5rem;
+  }
 }

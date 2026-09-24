@@ -1,199 +1,159 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
+import { FIELDS, listFieldPaths, parseRecords } from '../lib/events';
+import ConnectSite from './ConnectSite';
 import './DataImporter.css';
 
-const DataImporter = ({ onDataImport }) => {
+const DataImporter = ({ records, source, mapping, onDataImport, onMappingChange }) => {
   const [jsonInput, setJsonInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [previewData, setPreviewData] = useState(null);
+  const [datasets, setDatasets] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/datasets')
+      .then(r => (r.ok ? r.json() : { datasets: [] }))
+      .then(j => setDatasets(j.datasets || []))
+      .catch(() => {});
+  }, []);
+
+  const importText = useCallback((text, label) => {
+    try {
+      const parsed = parseRecords(text);
+      if (!parsed.length) throw new Error('No records found');
+      setError(null);
+      onDataImport(parsed, label);
+    } catch (err) {
+      setError(err.message);
+    }
+  }, [onDataImport]);
 
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
-    if (file) {
-      setIsLoading(true);
-      setError(null);
-      
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        try {
-          const text = e.target.result;
-          const data = JSON.parse(text);
-          setJsonInput(JSON.stringify(data, null, 2));
-          setPreviewData(data);
-          setIsLoading(false);
-        } catch (err) {
-          setError('Invalid JSON file. Please check the format.');
-          setIsLoading(false);
-        }
-      };
-      reader.readAsText(file);
-    }
-  }, []);
+    if (!file) return;
+    setIsLoading(true);
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      importText(e.target.result, file.name);
+      setIsLoading(false);
+    };
+    reader.readAsText(file);
+  }, [importText]);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      'application/json': ['.json'],
+      'application/json': ['.json', '.ndjson', '.jsonl'],
+      'text/csv': ['.csv'],
       'text/plain': ['.txt']
     },
     multiple: false
   });
 
-  const handleTextAreaChange = (e) => {
-    const value = e.target.value;
-    setJsonInput(value);
-    
-    if (value.trim()) {
-      try {
-        const data = JSON.parse(value);
-        setPreviewData(data);
-        setError(null);
-      } catch (err) {
-        setPreviewData(null);
-        setError('Invalid JSON format');
-      }
-    } else {
-      setPreviewData(null);
-      setError(null);
-    }
-  };
-
-  const handleImport = () => {
-    if (previewData) {
-      onDataImport(previewData);
-    }
-  };
-
-  const handleLoadSample = async () => {
+  const loadUrl = async (url, label) => {
     try {
-      const response = await fetch('/sampleData.txt');
-      const text = await response.text();
-      const sampleData = JSON.parse(text);
-      
-      setJsonInput(JSON.stringify(sampleData, null, 2));
-      setPreviewData(sampleData);
-      setError(null);
+      setIsLoading(true);
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Failed to load ${label}`);
+      importText(await res.text(), label);
     } catch (err) {
-      // Fallback to embedded sample data if file loading fails
-      const fallbackData = [
-        {
-          "screenName": "onboarding",
-          "action": "app_opened",
-          "category": "app_open",
-          "label": {
-            "screen_name": "MainActivity",
-            "mode": "normal",
-            "onBoardingStatus": "Complete"
-          }
-        },
-        {
-          "screenName": "onboarding", 
-          "action": "login_start_seen",
-          "category": "listing_upload_new",
-          "label": {
-            "property_type": "residential",
-            "service_type": "rent",
-            "login_state": false,
-            "screen_name": "user-login",
-            "city": ""
-          }
-        },
-        {
-          "screenName": "homeTab",
-          "action": "seen",
-          "category": "home_tab",
-          "label": {}
-        }
-      ];
-      
-      setJsonInput(JSON.stringify(fallbackData, null, 2));
-      setPreviewData(fallbackData);
-      setError(null);
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const renderPreview = () => {
-    if (!previewData) return null;
-    
-    const isArray = Array.isArray(previewData);
-    const count = isArray ? previewData.length : Object.keys(previewData).length;
-    const sample = isArray ? previewData.slice(0, 3) : [previewData];
-    
-    return (
-      <div className="data-preview">
-        <h3>📊 Data Preview</h3>
-        <div className="preview-stats">
-          <span className="stat">Records: {count}</span>
-          <span className="stat">Type: {isArray ? 'Array' : 'Object'}</span>
-        </div>
-        <pre className="preview-json">
-          {JSON.stringify(sample, null, 2)}
-        </pre>
-        {isArray && previewData.length > 3 && (
-          <p className="preview-note">... and {previewData.length - 3} more records</p>
-        )}
-      </div>
-    );
-  };
+  const fieldPaths = records?.length ? listFieldPaths(records) : [];
 
   return (
     <div className="data-importer">
       <div className="importer-section">
-        <h2>📥 Import Your Data</h2>
-        <p>Upload a JSON file or paste your data directly to get started with funnel analysis.</p>
-        
+        <h2>📥 Bring in your events</h2>
+
+        <ConnectSite onLoadLive={() => loadUrl('/api/events', 'Live (collector)')} />
+
+        <h3>📁 Or import an export</h3>
+        <p>
+          Drop an event export (JSON, NDJSON or CSV). Exports from Segment, GA4 (BigQuery), Mixpanel,
+          Amplitude and GTM dataLayer dumps are detected automatically.
+        </p>
+
         <div className="import-methods">
           <div className="file-upload">
-            <div
-              {...getRootProps()}
-              className={`dropzone ${isDragActive ? 'active' : ''}`}
-            >
+            <div {...getRootProps()} className={`dropzone ${isDragActive ? 'active' : ''}`}>
               <input {...getInputProps()} />
               {isLoading ? (
-                <div className="loading">⏳ Processing file...</div>
+                <div className="loading">⏳ Processing…</div>
               ) : isDragActive ? (
-                <div className="drop-message">📎 Drop your JSON file here</div>
+                <div className="drop-message">📎 Drop your file here</div>
               ) : (
                 <div className="upload-message">
                   <div className="upload-icon">📁</div>
-                  <p>Drag & drop your JSON file here, or click to browse</p>
-                  <small>Supports .json and .txt files</small>
+                  <p>Drag & drop a file here, or click to browse</p>
+                  <small>.json, .ndjson, .jsonl, .csv, .txt</small>
                 </div>
               )}
             </div>
           </div>
 
           <div className="text-input">
-            <label htmlFor="json-input">Or paste your JSON data:</label>
+            <label htmlFor="json-input">Or paste events:</label>
             <textarea
               id="json-input"
               value={jsonInput}
-              onChange={handleTextAreaChange}
-              placeholder={`Paste your JSON data here, for example:\n[\n  {\n    "userId": "user_1",\n    "event": "page_view",\n    "timestamp": "2024-01-01T10:00:00Z"\n  }\n]`}
+              onChange={e => setJsonInput(e.target.value)}
+              placeholder={`[\n  { "userId": "u1", "event": "page_view", "page": "/home", "timestamp": "2024-01-01T10:00:00Z" }\n]`}
               rows={8}
             />
-            
             <div className="input-actions">
-              <button onClick={handleLoadSample} className="sample-btn">
-                📝 Load Sample Data
+              <button onClick={() => loadUrl('/demo-events.json', 'Demo data')} className="sample-btn">
+                📝 Load demo data
               </button>
-              {previewData && (
-                <button onClick={handleImport} className="import-btn">
-                  ✨ Import Data
+              {datasets.length > 0 && (
+                <select
+                  className="sample-btn"
+                  value=""
+                  onChange={e => e.target.value && loadUrl(`/api/datasets/${encodeURIComponent(e.target.value)}`, e.target.value)}
+                >
+                  <option value="">🗂 Load saved dataset…</option>
+                  {datasets.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
+                </select>
+              )}
+              {jsonInput.trim() && (
+                <button onClick={() => importText(jsonInput, 'Pasted data')} className="import-btn">
+                  ✨ Import
                 </button>
               )}
             </div>
           </div>
         </div>
 
-        {error && (
-          <div className="error-message">
-            ❌ {error}
+        {error && <div className="error-message">❌ {error}</div>}
+
+        {records?.length > 0 && (
+          <div className="data-preview">
+            <h3>🧭 Field mapping</h3>
+            <div className="preview-stats">
+              <span className="stat">Source: {source}</span>
+              <span className="stat">Records: {records.length}</span>
+            </div>
+            <p className="preview-note">
+              We guessed which fields hold what. Adjust if something looks wrong; every view updates instantly.
+            </p>
+            <div className="mapping-grid">
+              {FIELDS.map(f => (
+                <label key={f.key} className="mapping-row">
+                  <span>{f.label}{f.required ? ' *' : ''}</span>
+                  <select value={mapping[f.key] || ''} onChange={e => onMappingChange({ ...mapping, [f.key]: e.target.value })}>
+                    <option value="">— none —</option>
+                    {fieldPaths.map(p => <option key={p} value={p}>{p}</option>)}
+                  </select>
+                </label>
+              ))}
+            </div>
+            <pre className="preview-json">{JSON.stringify(records.slice(0, 2), null, 2)}</pre>
           </div>
         )}
-
-        {renderPreview()}
       </div>
     </div>
   );

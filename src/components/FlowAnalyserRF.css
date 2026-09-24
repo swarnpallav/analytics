@@ -14,7 +14,6 @@
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  color: #111827;
 }
 
 .rf-card .rf-card-body {
@@ -35,7 +34,6 @@
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   background: #fff;
-  color: #111827;
 }
 
 .rf-reset {
@@ -44,7 +42,6 @@
   background: #fff;
   border-radius: 8px;
   cursor: pointer;
-  color: #111827;
 }
 
 .rf-legend {
@@ -55,7 +52,6 @@
   background: #f8fafc;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
-  color: #111827;
 }
 
 .rf-legend .divider {
@@ -70,12 +66,8 @@
   border-radius: 2px;
 }
 
-.rf-dot.blue {
-  background: #3b82f6;
-}
-.rf-dot.green {
-  background: #10b981;
-}
+.rf-dot.blue { background: #3b82f6; }
+.rf-dot.green { background: #10b981; }
 
 .rf-stats {
   display: flex;
@@ -99,9 +91,8 @@
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   overflow: hidden;
-  color: #111827;
 }
 
 .flow-node .fn-header {
@@ -168,5 +159,7 @@
 
 .flow-node.hook {
   border-color: #86efac;
-  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.15);
+  box-shadow: 0 6px 14px rgba(16,185,129,0.15);
 }
+
+

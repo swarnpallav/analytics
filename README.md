@@ -1,69 +1,58 @@
-# JSON Funnel Analyzer
+# NavAIgate
 
-🚀 **Transform raw JSON data into insightful funnels & flows — get insights in seconds!**
+Visualise funnels and user journeys from the analytics events your website already fires.
 
-## Overview
+## What it does
 
-JSON Funnel Analyzer is a powerful React application that allows you to:
-- Import raw JSON data from various sources
-- Automatically detect and visualize user funnels
-- Create interactive flow diagrams
-- Generate actionable insights and analytics
-- Export visualizations and reports
+- **Funnel**: pick events or pages as ordered steps; see conversion and drop-off per user (or per session).
+- **Journey Graph / Timeline**: replay one user's or session's event sequence, optionally grouped by page.
+- **Insights**: event distribution, activity by hour, engagement per user.
 
-## Features
+## Getting data in
 
-- 📊 **Smart Funnel Detection**: Automatically identify conversion funnels from your data
-- 🔄 **Interactive Flow Visualization**: Create dynamic flow charts with drag-and-drop functionality
-- 🎯 **User Flow Diagram**: Visualize user journeys with clickable events and modal details
-- 🪝 **Hook Name & Hook Screen Analysis**: Special support for tracking hook_name and hook_screen data
-- 📈 **Real-time Analytics**: Get instant insights with conversion rates, drop-off points, and trends
-- 🎨 **Customizable Dashboards**: Build personalized views for your data
-- 📁 **Multiple Data Formats**: Support for JSON, CSV, and API integrations
-- 🔍 **Advanced Filtering**: Drill down into specific user segments and time periods
-- 📱 **Event Detail Modals**: Click on any event to view comprehensive details including hook data
+Any of these work; the event, page, timestamp, user and session fields are detected automatically and can be
+remapped on the Import tab.
 
-## Getting Started
+- **Script tag (recommended)**: add one line to your site's `<head>`:
 
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
-4. Open your browser to `http://localhost:5173`
+  ```html
+  <script async src="https://YOUR-NAVAIGATE-HOST/collector.js"></script>
+  ```
 
-## Usage
+  It records page views (including SPA navigations) and picks up events the site already sends through
+  GTM/gtag (`dataLayer`), Segment and Mixpanel, with an anonymous visitor ID and a 30-minute session ID.
+  Custom events: `window.navaigate.track('signup_clicked', { plan: 'pro' })`. Optional attributes:
+  `data-site`, `data-endpoint`, `data-pageviews="false"`, `data-debug="true"`. Try it locally at
+  `http://localhost:5173/collector-test.html`, then "Analyse live events" on the Import tab.
+- **DevTools console (no site access needed)**: on the Import tab, switch to "DevTools console", copy the
+  snippet, and paste it into the Console of any page (Chrome may ask you to type `allow pasting` first). It records
+  the same events as the script tag, including anything already in `dataLayer`, but only in your tab, and it stops on
+  a full page reload (paste again, or save it under Sources → Snippets to re-run quickly). Sites with a strict
+  Content-Security-Policy `connect-src` may block sending events.
+- **Upload / paste** a JSON, NDJSON or CSV export. Segment, GA4 (BigQuery), Mixpanel, Amplitude and GTM
+  `dataLayer` shapes are recognised; so is any flat `{ event, userId, timestamp, page }` style.
+- **Push events** to the server: `POST /api/events` with one event, an array, or `{ "events": [...] }`.
+  Events are appended to the live stream (`GET /api/events`, `DELETE /api/events` to clear), which the app
+  loads on startup.
+- **Saved datasets**: JSON files in `datasets/` show up under "Load saved dataset".
+- **Demo data**: a synthetic e-commerce dataset (`public/demo-events.json`).
 
-1. **Import Data**: Upload your JSON files or connect to your API (sample data loads automatically)
-2. **User Flow Diagram**: Navigate to the new "🎯 User Flow Diagram" tab to see your user journey visualization
-3. **Interactive Events**: Click on any event in the flow diagram to see detailed information in a modal
-4. **Hook Analysis**: Filter events by hook_name and hook_screen for targeted analysis
-5. **Configure Funnels**: Define your conversion steps and goals in other tabs
-6. **Analyze Insights**: Discover patterns, bottlenecks, and opportunities
-7. **Export Results**: Save your findings for presentations and reports
+## Getting started
 
-### New User Flow Diagram Features
+```bash
+npm install
+npm run dev      # Vite client on :5173 + API server on :8787
+```
 
-- **Screen-based Organization**: Events are grouped by `screenName` for better visualization
-- **Hook Data Highlighting**: Events with `hook_name` and `hook_screen` are specially highlighted
-- **Clickable Events**: Click any event to see full details including all label data
-- **Transition Analysis**: View how users move between different screens
-- **Filter Options**: Toggle to show only screens with hook data
+## AI features
 
-## Tech Stack
-
-- React 18 with Vite
-- Modern data visualization libraries
-- Responsive design with CSS modules
-- TypeScript support (optional)
+Chat, voice and AI insights are disabled by default. To enable them, set `ENABLE_AI=true`,
+`VITE_ENABLE_AI=true` and `OPENAI_API_KEY` in `.env` (see `env.example`).
 
 ## Development
 
 ```bash
-npm run dev      # Start development server
 npm run build    # Build for production
 npm run preview  # Preview production build
 npm run lint     # Run ESLint
 ```
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

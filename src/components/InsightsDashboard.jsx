@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { Line, Doughnut } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -25,105 +25,59 @@ ChartJS.register(
   Legend
 );
 
-const InsightsDashboard = ({ data }) => {
-  const [userIdField, setUserIdField] = useState('userId');
-  const [eventField, setEventField] = useState('event');
-  const [timestampField, setTimestampField] = useState('timestamp');
-  const [availableFields, setAvailableFields] = useState([]);
-
-  useEffect(() => {
-    if (data && Array.isArray(data) && data.length > 0) {
-      const sampleRecord = data[0];
-      const fields = Object.keys(sampleRecord);
-      setAvailableFields(fields);
-    }
-  }, [data]);
+const InsightsDashboard = ({ events }) => {
+  const unit = events.some(e => e.userId) ? 'User' : events.some(e => e.sessionId) ? 'Session' : 'Journey';
 
   const insights = useMemo(() => {
-    if (!data || !userIdField || !eventField) return null;
+    if (!events.length) return null;
 
-    const userJourneys = _.groupBy(data, userIdField);
+    const userJourneys = _.groupBy(events, e => e.userId || e.sessionId || 'all');
     const totalUsers = Object.keys(userJourneys).length;
-    
+
     // Event distribution
-    const eventCounts = _.countBy(data, eventField);
+    const eventCounts = _.countBy(events, 'name');
     const sortedEvents = Object.entries(eventCounts)
       .sort(([,a], [,b]) => b - a)
       .slice(0, 10);
 
     // User engagement metrics
-    const userSessionLengths = Object.entries(userJourneys).map(([userId, events]) => ({
+    const userSessionLengths = Object.entries(userJourneys).map(([userId, evs]) => ({
       userId,
-      eventCount: events.length,
-      uniqueEvents: _.uniq(events.map(e => e[eventField])).length
+      eventCount: evs.length,
+      uniqueEvents: _.uniq(evs.map(e => e.name)).length
     }));
 
     const avgEventsPerUser = _.meanBy(userSessionLengths, 'eventCount');
     const avgUniqueEventsPerUser = _.meanBy(userSessionLengths, 'uniqueEvents');
 
-    // Temporal analysis (if timestamp is available)
+    // Temporal analysis (if timestamps are available)
     let temporalData = null;
-    if (timestampField) {
-      const eventsWithTime = data
-        .filter(event => event[timestampField])
-        .map(event => ({
-          ...event,
-          parsedTime: new Date(event[timestampField])
-        }))
-        .filter(event => !isNaN(event.parsedTime.getTime()));
-
-      if (eventsWithTime.length > 0) {
-        // Group by hour of day
-        const hourlyActivity = _.groupBy(eventsWithTime, event => 
-          event.parsedTime.getHours()
-        );
-        
-        const hourlyData = Array.from({ length: 24 }, (_, hour) => ({
+    const eventsWithTime = events.filter(e => Number.isFinite(e.ts)).map(e => ({ ...e, parsedTime: new Date(e.ts) }));
+    if (eventsWithTime.length > 0) {
+      const hourlyActivity = _.groupBy(eventsWithTime, e => e.parsedTime.getHours());
+      temporalData = {
+        hourlyActivity: Array.from({ length: 24 }, (_, hour) => ({
           hour,
           count: hourlyActivity[hour] ? hourlyActivity[hour].length : 0
-        }));
-
-        temporalData = {
-          hourlyActivity: hourlyData,
-          timeRange: {
-            start: _.minBy(eventsWithTime, 'parsedTime').parsedTime,
-            end: _.maxBy(eventsWithTime, 'parsedTime').parsedTime
-          }
-        };
-      }
-    }
-
-    // Conversion analysis
-    const conversionFunnel = [];
-    const eventTypes = Object.keys(eventCounts);
-    
-    // Calculate step-by-step conversion if we have multiple event types
-    if (eventTypes.length > 1) {
-      eventTypes.forEach((eventType, index) => {
-        const usersWithEvent = Object.entries(userJourneys).filter(([userId, events]) =>
-          events.some(event => event[eventField] === eventType)
-        ).length;
-        
-        conversionFunnel.push({
-          event: eventType,
-          users: usersWithEvent,
-          percentage: Math.round((usersWithEvent / totalUsers) * 100)
-        });
-      });
+        })),
+        timeRange: {
+          start: _.minBy(eventsWithTime, 'ts').parsedTime,
+          end: _.maxBy(eventsWithTime, 'ts').parsedTime
+        }
+      };
     }
 
     return {
       totalUsers,
-      totalEvents: data.length,
+      totalEvents: events.length,
       uniqueEvents: Object.keys(eventCounts).length,
       eventDistribution: sortedEvents,
       avgEventsPerUser: Math.round(avgEventsPerUser * 10) / 10,
       avgUniqueEventsPerUser: Math.round(avgUniqueEventsPerUser * 10) / 10,
       userSessionLengths,
-      temporalData,
-      conversionFunnel
+      temporalData
     };
-  }, [data, userIdField, eventField, timestampField]);
+  }, [events]);
 
   const eventDistributionChart = useMemo(() => {
     if (!insights) return null;
@@ -179,7 +133,7 @@ const InsightsDashboard = ({ data }) => {
     };
   }, [insights]);
 
-  if (!data) {
+  if (!insights) {
     return (
       <div className="insights-dashboard">
         <div className="no-data">
@@ -196,35 +150,6 @@ const InsightsDashboard = ({ data }) => {
         <h2>🔍 Analytics & Insights</h2>
         <p>Discover patterns, trends, and key metrics from your data.</p>
         
-        <div className="field-config">
-          <div className="field-group">
-            <label>User ID Field:</label>
-            <select value={userIdField} onChange={(e) => setUserIdField(e.target.value)}>
-              {availableFields.map(field => (
-                <option key={field} value={field}>{field}</option>
-              ))}
-            </select>
-          </div>
-          
-          <div className="field-group">
-            <label>Event Field:</label>
-            <select value={eventField} onChange={(e) => setEventField(e.target.value)}>
-              {availableFields.map(field => (
-                <option key={field} value={field}>{field}</option>
-              ))}
-            </select>
-          </div>
-          
-          <div className="field-group">
-            <label>Timestamp Field (optional):</label>
-            <select value={timestampField} onChange={(e) => setTimestampField(e.target.value)}>
-              <option value="">None</option>
-              {availableFields.map(field => (
-                <option key={field} value={field}>{field}</option>
-              ))}
-            </select>
-          </div>
-        </div>
       </div>
 
       {insights && (
@@ -234,7 +159,7 @@ const InsightsDashboard = ({ data }) => {
             <div className="metrics-grid">
               <div className="metric-card">
                 <div className="metric-value">{insights.totalUsers}</div>
-                <div className="metric-label">Total Users</div>
+                <div className="metric-label">Total {unit}s</div>
               </div>
               <div className="metric-card">
                 <div className="metric-value">{insights.totalEvents}</div>
@@ -246,7 +171,7 @@ const InsightsDashboard = ({ data }) => {
               </div>
               <div className="metric-card">
                 <div className="metric-value">{insights.avgEventsPerUser}</div>
-                <div className="metric-label">Avg Events/User</div>
+                <div className="metric-label">Avg Events/{unit}</div>
               </div>
             </div>
           </div>
@@ -311,17 +236,17 @@ const InsightsDashboard = ({ data }) => {
               <h3>👥 User Engagement Analysis</h3>
               <div className="engagement-stats">
                 <div className="stat-row">
-                  <span className="stat-label">Average events per user:</span>
+                  <span className="stat-label">Average events per {unit.toLowerCase()}:</span>
                   <span className="stat-value">{insights.avgEventsPerUser}</span>
                 </div>
                 <div className="stat-row">
-                  <span className="stat-label">Average unique events per user:</span>
+                  <span className="stat-label">Average unique events per {unit.toLowerCase()}:</span>
                   <span className="stat-value">{insights.avgUniqueEventsPerUser}</span>
                 </div>
               </div>
               
               <div className="user-distribution">
-                <h4>User Activity Distribution</h4>
+                <h4>{unit} Activity Distribution</h4>
                 <div className="distribution-bars">
                   {[1, 2, 3, 4, 5, '6+'].map((range, index) => {
                     const count = insights.userSessionLengths.filter(user => {
@@ -339,7 +264,7 @@ const InsightsDashboard = ({ data }) => {
                             className="bar-fill" 
                             style={{ width: `${percentage}%` }}
                           ></div>
-                          <span className="bar-text">{count} users ({percentage}%)</span>
+                          <span className="bar-text">{count} ({percentage}%)</span>
                         </div>
                       </div>
                     );
@@ -400,7 +325,7 @@ const InsightsDashboard = ({ data }) => {
                 <div className="insight-item">
                   <div className="insight-icon">👥</div>
                   <div className="insight-text">
-                    <strong>User Engagement:</strong> Average user performs {insights.avgEventsPerUser} events
+                    <strong>User Engagement:</strong> Average {unit.toLowerCase()} performs {insights.avgEventsPerUser} events
                   </div>
                 </div>
                 

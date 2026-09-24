@@ -1,95 +1,88 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import DataImporter from './DataImporter';
 import FunnelVisualizer from './FunnelVisualizer';
-import FlowAnalyzer from './FlowAnalyzer';
 import FlowAnalyserRF from './FlowAnalyserRF';
 import UserFlowDiagram from './UserFlowDiagram';
 import InsightsDashboard from './InsightsDashboard';
+import { detectMapping, normalizeEvents, parseRecords } from '../lib/events';
 import './Dashboard.css';
 
+const tabs = [
+  { id: 'import', label: '📥 Import Data', component: DataImporter },
+  { id: 'funnel', label: '📊 Funnel', component: FunnelVisualizer },
+  { id: 'flowAnalyser', label: '🧭 Journey Graph', component: FlowAnalyserRF },
+  { id: 'diagram', label: '🎯 Journey Timeline', component: UserFlowDiagram },
+  { id: 'insights', label: '🔍 Insights', component: InsightsDashboard }
+];
+
 const Dashboard = () => {
-  const [data, setData] = useState(null);
+  const [records, setRecords] = useState(null);
+  const [source, setSource] = useState('');
+  const [mapping, setMapping] = useState({});
   const [activeTab, setActiveTab] = useState('import');
-  const [funnelConfig, setFunnelConfig] = useState({
-    steps: [],
-    conversionField: '',
-    userIdField: ''
-  });
 
-  const handleDataImport = (importedData) => {
-    setData(importedData);
-    setActiveTab('visualize');
+  const events = useMemo(() => (records && mapping.name ? normalizeEvents(records, mapping) : null), [records, mapping]);
+
+  const handleDataImport = (imported, label) => {
+    setRecords(imported);
+    setSource(label);
+    setMapping(detectMapping(imported));
   };
 
-  const handleFunnelConfig = (config) => {
-    setFunnelConfig(config);
-  };
-
-  // Auto-load sample data on component mount
+  // Start with whatever was last pushed to the server (POST /api/events), if anything.
   useEffect(() => {
-    const loadSampleData = async () => {
-      try {
-        const response = await fetch('/sampleData.txt');
-        const text = await response.text();
-        const sampleData = JSON.parse(text);
-        setData(sampleData);
-        setActiveTab('diagram'); // Switch to the new flow diagram tab
-      } catch (error) {
-        console.log('Sample data not available, user will need to import manually');
-      }
-    };
-
-    if (!data) {
-      loadSampleData();
-    }
-  }, [data]);
-
-  const tabs = [
-    { id: 'import', label: '📥 Import Data', component: DataImporter },
-    { id: 'visualize', label: '📊 Visualize Funnel', component: FunnelVisualizer },
-    { id: 'flows', label: '🔄 Flow Analysis', component: FlowAnalyzer },
-    { id: 'flowAnalyser', label: '🧭 Flow Analyser', component: FlowAnalyserRF },
-    { id: 'diagram', label: '🎯 User Flow Diagram', component: UserFlowDiagram },
-    { id: 'insights', label: '🔍 Insights', component: InsightsDashboard }
-  ];
+    fetch('/api/events')
+      .then(r => (r.ok ? r.text() : ''))
+      .then(text => {
+        const live = text ? parseRecords(text) : [];
+        if (live.length) handleDataImport(live, 'Live (collector)');
+      })
+      .catch(() => {});
+  }, []);
 
   const ActiveComponent = tabs.find(tab => tab.id === activeTab)?.component;
+  const ready = Boolean(events?.length);
 
   return (
     <div className="dashboard">
       <header className="dashboard-header">
-        <h1>🚀 JSON Funnel Analyzer</h1>
-        <p>Transform raw JSON data into insightful funnels & flows — get insights in seconds!</p>
+        <h1>🚀 NavAIgate</h1>
+        <p>Visualise funnels and user journeys from the events your site already fires.</p>
       </header>
 
       <nav className="dashboard-nav">
-        {tabs.map(tab => (
-          <button
-            key={tab.id}
-            className={`nav-tab ${activeTab === tab.id ? 'active' : ''} ${!data && tab.id !== 'import' ? 'disabled' : ''}`}
-            onClick={() => data || tab.id === 'import' ? setActiveTab(tab.id) : null}
-            disabled={!data && tab.id !== 'import'}
-          >
-            {tab.label}
-          </button>
-        ))}
+        {tabs.map(tab => {
+          const disabled = !ready && tab.id !== 'import';
+          return (
+            <button
+              key={tab.id}
+              className={`nav-tab ${activeTab === tab.id ? 'active' : ''} ${disabled ? 'disabled' : ''}`}
+              onClick={() => !disabled && setActiveTab(tab.id)}
+              disabled={disabled}
+            >
+              {tab.label}
+            </button>
+          );
+        })}
       </nav>
 
       <main className="dashboard-content">
         {ActiveComponent && (
           <ActiveComponent
-            data={data}
+            events={events || []}
+            records={records}
+            source={source}
+            mapping={mapping}
             onDataImport={handleDataImport}
-            funnelConfig={funnelConfig}
-            onFunnelConfig={handleFunnelConfig}
+            onMappingChange={setMapping}
           />
         )}
       </main>
 
-      {data && (
+      {ready && (
         <footer className="dashboard-footer">
           <div className="data-info">
-            <span>📊 {Array.isArray(data) ? data.length : Object.keys(data).length} records loaded</span>
+            <span>📊 {events.length} events loaded from {source}</span>
           </div>
         </footer>
       )}

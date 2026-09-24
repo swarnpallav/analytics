@@ -54,7 +54,7 @@ export default function VoiceAssistant() {
   useEffect(() => {
     const loadSampleData = async () => {
       try {
-        const response = await fetch('/sampleData.txt');
+        const response = await fetch('/api/events');
         const text = await response.text();
         const sampleData = JSON.parse(text);
         setData(Array.isArray(sampleData) ? sampleData : []);
@@ -208,33 +208,50 @@ export default function VoiceAssistant() {
       <div style={{ marginBottom: 12 }}>
         <Link to="/">← Back to Dashboard</Link>
       </div>
-      <h2>🎙️ Voice Assistant</h2>
-      <p>Say: "show category signin" or "filter category owner_payment"</p>
+      <h2 style={{ marginTop: 0 }}>🎙️ Voice Assistant</h2>
+      <p style={{ marginTop: 4, color: '#64748b' }}>Say: "show category signin" or "filter category owner_payment"</p>
 
-      <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginTop: 12, flexWrap: 'wrap' }}>
-        {!listening ? (
-          <button onClick={startListening} style={{ padding: '8px 12px' }}>Start Listening</button>
-        ) : (
-          <button onClick={stopListening} style={{ padding: '8px 12px' }}>Stop</button>
+      <div className="card" style={{ padding: 12 }}>
+        <div className="toolbar">
+          {!listening ? (
+            <button className="btn-primary" onClick={startListening}>Start Listening</button>
+          ) : (
+            <button className="btn-outline" onClick={stopListening} style={{ borderColor: '#ef4444', color: '#ef4444' }}>Stop</button>
+          )}
+          <select className="select" value={category} onChange={e => setCategory(e.target.value)}>
+            <option value="all">All</option>
+            {categories.map(c => (
+              <option key={c} value={c}>{c}</option>
+            ))}
+          </select>
+          <select className="select" value={action} onChange={e => setAction(e.target.value)}>
+            <option value="all">All actions</option>
+            {actions.map(a => (
+              <option key={a} value={a}>{a}</option>
+            ))}
+          </select>
+          <select className="select" value={hookName} onChange={e => setHookName(e.target.value)}>
+            <option value="all">All hooks</option>
+            {hookNames.map(h => (
+              <option key={h} value={h}>{h}</option>
+            ))}
+          </select>
+        </div>
+
+        {error && (
+          <div style={{ marginTop: 8, color: '#dc2626' }}>{error}</div>
         )}
-        <select value={category} onChange={e => setCategory(e.target.value)} style={{ padding: 6 }}>
-          <option value="all">All</option>
-          {categories.map(c => (
-            <option key={c} value={c}>{c}</option>
-          ))}
-        </select>
-        <select value={action} onChange={e => setAction(e.target.value)} style={{ padding: 6 }}>
-          <option value="all">All actions</option>
-          {actions.map(a => (
-            <option key={a} value={a}>{a}</option>
-          ))}
-        </select>
-        <select value={hookName} onChange={e => setHookName(e.target.value)} style={{ padding: 6 }}>
-          <option value="all">All hooks</option>
-          {hookNames.map(h => (
-            <option key={h} value={h}>{h}</option>
-          ))}
-        </select>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 8 }}>
+          {transcript && (
+            <span style={{ background: 'var(--primary-50)', border: '1px solid var(--border)', borderRadius: 999, padding: '4px 10px', color: '#334155' }}>Heard: <strong>{transcript}</strong></span>
+          )}
+          {intent && intent.type !== 'unknown' && (
+            <span style={{ background: '#ecfeff', border: '1px solid #cffafe', borderRadius: 999, padding: '4px 10px', color: '#065f46' }}>Intent: {intent.type}{intent.category ? ` • ${intent.category}` : ''}{intent.action ? ` • ${intent.action}` : ''}{intent.hookName ? ` • ${intent.hookName}` : ''}</span>
+          )}
+          {answer && (
+            <span style={{ background: '#fef3c7', border: '1px solid #fde68a', borderRadius: 999, padding: '4px 10px', color: '#92400e' }}>{answer}</span>
+          )}
+        </div>
       </div>
 
       {error && (
@@ -257,9 +274,11 @@ export default function VoiceAssistant() {
       )}
 
       {!showDuplicates && (
-        <div style={{ marginTop: 16 }}>
-          <h3>Events ({filtered.length})</h3>
-          <div style={{ maxHeight: '60vh', overflow: 'auto', border: '1px solid #e5e7eb', borderRadius: 8, padding: 8 }}>
+        <div className="card" style={{ marginTop: 12 }}>
+          <div style={{ padding: '10px 12px', borderBottom: '1px solid var(--border)', background: '#fff' }}>
+            <h3 style={{ margin: 0 }}>Events ({filtered.length})</h3>
+          </div>
+          <div style={{ maxHeight: '60vh', overflow: 'auto', padding: 8 }}>
             {filtered.slice(0, 500).map((e, i) => (
               <div key={i} style={{ padding: 8, borderBottom: '1px solid #f1f5f9' }}>
                 <div style={{ fontWeight: 600 }}>{e.screenName || 'UNKNOWN'} → {e.action}</div>
@@ -273,9 +292,11 @@ export default function VoiceAssistant() {
         </div>
       )}
       {showDuplicates && (
-        <div style={{ marginTop: 16 }}>
-          <h3>Duplicate Events ({duplicates.length})</h3>
-          <div style={{ maxHeight: '60vh', overflow: 'auto', border: '1px solid #e5e7eb', borderRadius: 8, padding: 8 }}>
+        <div className="card" style={{ marginTop: 12 }}>
+          <div style={{ padding: '10px 12px', borderBottom: '1px solid var(--border)', background: '#fff' }}>
+            <h3 style={{ margin: 0 }}>Duplicate Events ({duplicates.length})</h3>
+          </div>
+          <div style={{ maxHeight: '60vh', overflow: 'auto', padding: 8 }}>
             {duplicates.slice(0, 500).map((d, i) => (
               <div key={i} style={{ padding: 8, borderBottom: '1px solid #f1f5f9' }}>
                 <div style={{ fontWeight: 600 }}>#{d.dupIndex} duplicates #{d.firstIndex}</div>

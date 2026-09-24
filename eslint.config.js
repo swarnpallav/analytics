@@ -26,4 +26,14 @@ export default defineConfig([
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
   },
+  {
+    files: ['server.js', 'server/**/*.js'],
+    languageOptions: { globals: globals.node },
+  },
+  {
+    // Runs on arbitrary third-party sites, so it stays ES5 (which requires a binding in every catch).
+    files: ['collector/**/*.js'],
+    languageOptions: { ecmaVersion: 5, sourceType: 'script', globals: globals.browser },
+    rules: { 'no-unused-vars': ['error', { caughtErrors: 'none' }] },
+  },
 ])

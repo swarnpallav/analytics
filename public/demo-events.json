@@ -1,0 +1,3679 @@
+[
+ {
+  "event": "page_view",
+  "userId": "user_042",
+  "sessionId": "user_042_s2",
+  "timestamp": "2025-06-02T14:33:51.313Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_042",
+  "sessionId": "user_042_s2",
+  "timestamp": "2025-06-02T14:33:58.559Z",
+  "page": "/about",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_011",
+  "sessionId": "user_011_s1",
+  "timestamp": "2025-06-02T16:27:05.093Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_011",
+  "sessionId": "user_011_s1",
+  "timestamp": "2025-06-02T16:27:16.549Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_011",
+  "sessionId": "user_011_s1",
+  "timestamp": "2025-06-02T16:27:38.974Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_011",
+  "sessionId": "user_011_s1",
+  "timestamp": "2025-06-02T16:28:12.609Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_011",
+  "sessionId": "user_011_s1",
+  "timestamp": "2025-06-02T16:28:51.728Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_011",
+  "sessionId": "user_011_s1",
+  "timestamp": "2025-06-02T16:29:35.130Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_011",
+  "sessionId": "user_011_s1",
+  "timestamp": "2025-06-02T16:30:40.524Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "headphones",
+   "revenue": 129
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_016",
+  "sessionId": "user_016_s1",
+  "timestamp": "2025-06-02T20:19:39.282Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_016",
+  "sessionId": "user_016_s1",
+  "timestamp": "2025-06-02T20:20:15.535Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_016",
+  "sessionId": "user_016_s1",
+  "timestamp": "2025-06-02T20:21:16.517Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_016",
+  "sessionId": "user_016_s1",
+  "timestamp": "2025-06-02T20:21:45.130Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_004",
+  "sessionId": "user_004_s2",
+  "timestamp": "2025-06-02T22:26:09.227Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_004",
+  "sessionId": "user_004_s2",
+  "timestamp": "2025-06-02T22:27:27.501Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_004",
+  "sessionId": "user_004_s2",
+  "timestamp": "2025-06-02T22:28:10.485Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_004",
+  "sessionId": "user_004_s2",
+  "timestamp": "2025-06-02T22:28:17.820Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_044",
+  "sessionId": "user_044_s1",
+  "timestamp": "2025-06-02T22:39:31.667Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_044",
+  "sessionId": "user_044_s1",
+  "timestamp": "2025-06-02T22:40:52.599Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_044",
+  "sessionId": "user_044_s1",
+  "timestamp": "2025-06-02T22:41:46.933Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_044",
+  "sessionId": "user_044_s1",
+  "timestamp": "2025-06-02T22:43:14.451Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_044",
+  "sessionId": "user_044_s1",
+  "timestamp": "2025-06-02T22:44:46.938Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_059",
+  "sessionId": "user_059_s1",
+  "timestamp": "2025-06-02T23:27:41.733Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_059",
+  "sessionId": "user_059_s1",
+  "timestamp": "2025-06-02T23:28:53.908Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_059",
+  "sessionId": "user_059_s1",
+  "timestamp": "2025-06-02T23:30:10.173Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_059",
+  "sessionId": "user_059_s1",
+  "timestamp": "2025-06-02T23:30:23.929Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_059",
+  "sessionId": "user_059_s1",
+  "timestamp": "2025-06-02T23:31:16.732Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_052",
+  "sessionId": "user_052_s1",
+  "timestamp": "2025-06-03T05:04:01.537Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_052",
+  "sessionId": "user_052_s1",
+  "timestamp": "2025-06-03T05:04:08.364Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_052",
+  "sessionId": "user_052_s1",
+  "timestamp": "2025-06-03T05:05:41.319Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_052",
+  "sessionId": "user_052_s1",
+  "timestamp": "2025-06-03T05:06:52.989Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_057",
+  "sessionId": "user_057_s1",
+  "timestamp": "2025-06-03T05:25:14.128Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_057",
+  "sessionId": "user_057_s1",
+  "timestamp": "2025-06-03T05:25:37.614Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_057",
+  "sessionId": "user_057_s1",
+  "timestamp": "2025-06-03T05:27:09.799Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_057",
+  "sessionId": "user_057_s1",
+  "timestamp": "2025-06-03T05:27:47.908Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_057",
+  "sessionId": "user_057_s1",
+  "timestamp": "2025-06-03T05:28:04.801Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_040",
+  "sessionId": "user_040_s1",
+  "timestamp": "2025-06-03T08:51:37.800Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_040",
+  "sessionId": "user_040_s1",
+  "timestamp": "2025-06-03T08:52:43.484Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_040",
+  "sessionId": "user_040_s1",
+  "timestamp": "2025-06-03T08:53:21.518Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_040",
+  "sessionId": "user_040_s1",
+  "timestamp": "2025-06-03T08:54:15.199Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_054",
+  "sessionId": "user_054_s1",
+  "timestamp": "2025-06-03T12:47:17.812Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_054",
+  "sessionId": "user_054_s1",
+  "timestamp": "2025-06-03T12:48:35.930Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_054",
+  "sessionId": "user_054_s1",
+  "timestamp": "2025-06-03T12:49:30.783Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_054",
+  "sessionId": "user_054_s1",
+  "timestamp": "2025-06-03T12:49:51.848Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_054",
+  "sessionId": "user_054_s1",
+  "timestamp": "2025-06-03T12:51:17.879Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_054",
+  "sessionId": "user_054_s1",
+  "timestamp": "2025-06-03T12:52:37.199Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_054",
+  "sessionId": "user_054_s1",
+  "timestamp": "2025-06-03T12:53:56.781Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "water-bottle",
+   "revenue": 19
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_047",
+  "sessionId": "user_047_s1",
+  "timestamp": "2025-06-03T12:55:56.190Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_047",
+  "sessionId": "user_047_s1",
+  "timestamp": "2025-06-03T12:56:48.725Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_047",
+  "sessionId": "user_047_s1",
+  "timestamp": "2025-06-03T12:58:03.128Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_047",
+  "sessionId": "user_047_s1",
+  "timestamp": "2025-06-03T12:59:30.443Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_034",
+  "sessionId": "user_034_s1",
+  "timestamp": "2025-06-03T14:09:01.745Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_034",
+  "sessionId": "user_034_s1",
+  "timestamp": "2025-06-03T14:09:24.605Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_034",
+  "sessionId": "user_034_s1",
+  "timestamp": "2025-06-03T14:10:45.813Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_034",
+  "sessionId": "user_034_s1",
+  "timestamp": "2025-06-03T14:11:54.324Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_034",
+  "sessionId": "user_034_s1",
+  "timestamp": "2025-06-03T14:12:02.769Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_020",
+  "sessionId": "user_020_s1",
+  "timestamp": "2025-06-03T15:13:15.867Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_020",
+  "sessionId": "user_020_s1",
+  "timestamp": "2025-06-03T15:13:56.481Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_020",
+  "sessionId": "user_020_s1",
+  "timestamp": "2025-06-03T15:14:03.866Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_020",
+  "sessionId": "user_020_s1",
+  "timestamp": "2025-06-03T15:14:57.395Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_023",
+  "sessionId": "user_023_s2",
+  "timestamp": "2025-06-03T15:21:31.423Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_023",
+  "sessionId": "user_023_s2",
+  "timestamp": "2025-06-03T15:23:04.570Z",
+  "page": "/about",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_046",
+  "sessionId": "user_046_s2",
+  "timestamp": "2025-06-03T16:02:47.223Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_046",
+  "sessionId": "user_046_s2",
+  "timestamp": "2025-06-03T16:03:36.345Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_046",
+  "sessionId": "user_046_s2",
+  "timestamp": "2025-06-03T16:04:45.737Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_046",
+  "sessionId": "user_046_s2",
+  "timestamp": "2025-06-03T16:05:58.366Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_057",
+  "sessionId": "user_057_s2",
+  "timestamp": "2025-06-03T19:40:30.819Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_057",
+  "sessionId": "user_057_s2",
+  "timestamp": "2025-06-03T19:40:50.197Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_057",
+  "sessionId": "user_057_s2",
+  "timestamp": "2025-06-03T19:41:05.636Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_057",
+  "sessionId": "user_057_s2",
+  "timestamp": "2025-06-03T19:41:17.344Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_057",
+  "sessionId": "user_057_s2",
+  "timestamp": "2025-06-03T19:41:49.237Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_048",
+  "sessionId": "user_048_s1",
+  "timestamp": "2025-06-03T21:39:03.239Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_048",
+  "sessionId": "user_048_s1",
+  "timestamp": "2025-06-03T21:40:03.752Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_048",
+  "sessionId": "user_048_s1",
+  "timestamp": "2025-06-03T21:40:48.990Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_048",
+  "sessionId": "user_048_s1",
+  "timestamp": "2025-06-03T21:41:20.340Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_019",
+  "sessionId": "user_019_s1",
+  "timestamp": "2025-06-04T05:41:53.961Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_019",
+  "sessionId": "user_019_s1",
+  "timestamp": "2025-06-04T05:42:49.491Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_019",
+  "sessionId": "user_019_s1",
+  "timestamp": "2025-06-04T05:43:11.544Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_019",
+  "sessionId": "user_019_s1",
+  "timestamp": "2025-06-04T05:44:09.182Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_019",
+  "sessionId": "user_019_s1",
+  "timestamp": "2025-06-04T05:45:09.956Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_019",
+  "sessionId": "user_019_s1",
+  "timestamp": "2025-06-04T05:46:20.248Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_019",
+  "sessionId": "user_019_s1",
+  "timestamp": "2025-06-04T05:46:37.722Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "sneakers",
+   "revenue": 89
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_056",
+  "sessionId": "user_056_s2",
+  "timestamp": "2025-06-04T07:10:28.591Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_056",
+  "sessionId": "user_056_s2",
+  "timestamp": "2025-06-04T07:10:45.794Z",
+  "page": "/about",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_031",
+  "sessionId": "user_031_s1",
+  "timestamp": "2025-06-04T09:03:30.609Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_031",
+  "sessionId": "user_031_s1",
+  "timestamp": "2025-06-04T09:04:31.424Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_031",
+  "sessionId": "user_031_s1",
+  "timestamp": "2025-06-04T09:05:23.564Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_031",
+  "sessionId": "user_031_s1",
+  "timestamp": "2025-06-04T09:06:00.635Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_031",
+  "sessionId": "user_031_s1",
+  "timestamp": "2025-06-04T09:06:24.012Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_031",
+  "sessionId": "user_031_s1",
+  "timestamp": "2025-06-04T09:06:35.732Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_031",
+  "sessionId": "user_031_s1",
+  "timestamp": "2025-06-04T09:06:54.226Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "backpack",
+   "revenue": 49
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_006",
+  "sessionId": "user_006_s1",
+  "timestamp": "2025-06-04T09:37:28.997Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_006",
+  "sessionId": "user_006_s1",
+  "timestamp": "2025-06-04T09:37:42.863Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_006",
+  "sessionId": "user_006_s1",
+  "timestamp": "2025-06-04T09:38:40.505Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_006",
+  "sessionId": "user_006_s1",
+  "timestamp": "2025-06-04T09:38:56.719Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_006",
+  "sessionId": "user_006_s1",
+  "timestamp": "2025-06-04T09:39:10.357Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_006",
+  "sessionId": "user_006_s1",
+  "timestamp": "2025-06-04T09:40:15.614Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_006",
+  "sessionId": "user_006_s1",
+  "timestamp": "2025-06-04T09:41:18.530Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "water-bottle",
+   "revenue": 19
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_012",
+  "sessionId": "user_012_s1",
+  "timestamp": "2025-06-04T13:27:15.593Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_012",
+  "sessionId": "user_012_s1",
+  "timestamp": "2025-06-04T13:27:55.899Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_012",
+  "sessionId": "user_012_s1",
+  "timestamp": "2025-06-04T13:28:07.458Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_012",
+  "sessionId": "user_012_s1",
+  "timestamp": "2025-06-04T13:29:02.595Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_012",
+  "sessionId": "user_012_s1",
+  "timestamp": "2025-06-04T13:29:59.132Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_012",
+  "sessionId": "user_012_s1",
+  "timestamp": "2025-06-04T13:31:18.253Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_012",
+  "sessionId": "user_012_s1",
+  "timestamp": "2025-06-04T13:31:27.746Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "sneakers",
+   "revenue": 89
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_043",
+  "sessionId": "user_043_s1",
+  "timestamp": "2025-06-04T14:02:19.186Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_043",
+  "sessionId": "user_043_s1",
+  "timestamp": "2025-06-04T14:03:30.236Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_043",
+  "sessionId": "user_043_s1",
+  "timestamp": "2025-06-04T14:04:49.822Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_043",
+  "sessionId": "user_043_s1",
+  "timestamp": "2025-06-04T14:05:37.425Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_043",
+  "sessionId": "user_043_s1",
+  "timestamp": "2025-06-04T14:06:05.602Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_043",
+  "sessionId": "user_043_s1",
+  "timestamp": "2025-06-04T14:06:54.875Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "payment_failed",
+  "userId": "user_043",
+  "sessionId": "user_043_s1",
+  "timestamp": "2025-06-04T14:08:28.276Z",
+  "page": "/checkout",
+  "properties": {
+   "reason": "card_declined"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_021",
+  "sessionId": "user_021_s1",
+  "timestamp": "2025-06-04T15:46:19.154Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_021",
+  "sessionId": "user_021_s1",
+  "timestamp": "2025-06-04T15:46:51.917Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_021",
+  "sessionId": "user_021_s1",
+  "timestamp": "2025-06-04T15:47:33.697Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_021",
+  "sessionId": "user_021_s1",
+  "timestamp": "2025-06-04T15:48:44.404Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_058",
+  "sessionId": "user_058_s1",
+  "timestamp": "2025-06-04T16:20:15.634Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_058",
+  "sessionId": "user_058_s1",
+  "timestamp": "2025-06-04T16:20:40.769Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_058",
+  "sessionId": "user_058_s1",
+  "timestamp": "2025-06-04T16:22:05.318Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_058",
+  "sessionId": "user_058_s1",
+  "timestamp": "2025-06-04T16:22:23.619Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_058",
+  "sessionId": "user_058_s1",
+  "timestamp": "2025-06-04T16:23:05.654Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_010",
+  "sessionId": "user_010_s1",
+  "timestamp": "2025-06-04T16:44:58.515Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_010",
+  "sessionId": "user_010_s1",
+  "timestamp": "2025-06-04T16:46:06.697Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_010",
+  "sessionId": "user_010_s1",
+  "timestamp": "2025-06-04T16:47:15.356Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_010",
+  "sessionId": "user_010_s1",
+  "timestamp": "2025-06-04T16:47:43.507Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_010",
+  "sessionId": "user_010_s1",
+  "timestamp": "2025-06-04T16:47:54.280Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_010",
+  "sessionId": "user_010_s1",
+  "timestamp": "2025-06-04T16:49:08.355Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_010",
+  "sessionId": "user_010_s1",
+  "timestamp": "2025-06-04T16:50:22.098Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "backpack",
+   "revenue": 49
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_007",
+  "sessionId": "user_007_s1",
+  "timestamp": "2025-06-04T17:37:20.891Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_007",
+  "sessionId": "user_007_s1",
+  "timestamp": "2025-06-04T17:38:47.288Z",
+  "page": "/about",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_053",
+  "sessionId": "user_053_s1",
+  "timestamp": "2025-06-04T19:30:56.520Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_053",
+  "sessionId": "user_053_s1",
+  "timestamp": "2025-06-04T19:32:24.143Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_053",
+  "sessionId": "user_053_s1",
+  "timestamp": "2025-06-04T19:32:32.096Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_053",
+  "sessionId": "user_053_s1",
+  "timestamp": "2025-06-04T19:33:45.685Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_053",
+  "sessionId": "user_053_s1",
+  "timestamp": "2025-06-04T19:35:01.303Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_053",
+  "sessionId": "user_053_s1",
+  "timestamp": "2025-06-04T19:36:00.773Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_053",
+  "sessionId": "user_053_s1",
+  "timestamp": "2025-06-04T19:36:15.796Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "backpack",
+   "revenue": 49
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_015",
+  "sessionId": "user_015_s1",
+  "timestamp": "2025-06-04T20:26:31.827Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_015",
+  "sessionId": "user_015_s1",
+  "timestamp": "2025-06-04T20:27:38.806Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_015",
+  "sessionId": "user_015_s1",
+  "timestamp": "2025-06-04T20:27:52.247Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_015",
+  "sessionId": "user_015_s1",
+  "timestamp": "2025-06-04T20:28:35.031Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_036",
+  "sessionId": "user_036_s1",
+  "timestamp": "2025-06-04T20:34:18.947Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_036",
+  "sessionId": "user_036_s1",
+  "timestamp": "2025-06-04T20:34:26.200Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_036",
+  "sessionId": "user_036_s1",
+  "timestamp": "2025-06-04T20:35:47.762Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_036",
+  "sessionId": "user_036_s1",
+  "timestamp": "2025-06-04T20:37:19.659Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_036",
+  "sessionId": "user_036_s1",
+  "timestamp": "2025-06-04T20:38:20.116Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_032",
+  "sessionId": "user_032_s1",
+  "timestamp": "2025-06-04T20:39:04.991Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_032",
+  "sessionId": "user_032_s1",
+  "timestamp": "2025-06-04T20:39:27.192Z",
+  "page": "/about",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_005",
+  "sessionId": "user_005_s1",
+  "timestamp": "2025-06-04T20:46:49.179Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_005",
+  "sessionId": "user_005_s1",
+  "timestamp": "2025-06-04T20:47:28.353Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_005",
+  "sessionId": "user_005_s1",
+  "timestamp": "2025-06-04T20:48:30.023Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_005",
+  "sessionId": "user_005_s1",
+  "timestamp": "2025-06-04T20:48:37.053Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_005",
+  "sessionId": "user_005_s1",
+  "timestamp": "2025-06-04T20:49:50.190Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_005",
+  "sessionId": "user_005_s1",
+  "timestamp": "2025-06-04T20:51:09.857Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "payment_failed",
+  "userId": "user_005",
+  "sessionId": "user_005_s1",
+  "timestamp": "2025-06-04T20:52:16.246Z",
+  "page": "/checkout",
+  "properties": {
+   "reason": "card_declined"
+  }
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_005",
+  "sessionId": "user_005_s1",
+  "timestamp": "2025-06-04T20:53:17.828Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "backpack",
+   "revenue": 49
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_026",
+  "sessionId": "user_026_s1",
+  "timestamp": "2025-06-05T02:05:46.482Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_026",
+  "sessionId": "user_026_s1",
+  "timestamp": "2025-06-05T02:07:08.877Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_026",
+  "sessionId": "user_026_s1",
+  "timestamp": "2025-06-05T02:08:24.964Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_026",
+  "sessionId": "user_026_s1",
+  "timestamp": "2025-06-05T02:08:31.228Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_026",
+  "sessionId": "user_026_s1",
+  "timestamp": "2025-06-05T02:09:06.233Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_026",
+  "sessionId": "user_026_s1",
+  "timestamp": "2025-06-05T02:10:21.654Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_026",
+  "sessionId": "user_026_s1",
+  "timestamp": "2025-06-05T02:11:08.814Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "water-bottle",
+   "revenue": 19
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_023",
+  "sessionId": "user_023_s1",
+  "timestamp": "2025-06-05T02:24:05.845Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_023",
+  "sessionId": "user_023_s1",
+  "timestamp": "2025-06-05T02:25:04.169Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_023",
+  "sessionId": "user_023_s1",
+  "timestamp": "2025-06-05T02:25:31.145Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_023",
+  "sessionId": "user_023_s1",
+  "timestamp": "2025-06-05T02:25:47.807Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_023",
+  "sessionId": "user_023_s1",
+  "timestamp": "2025-06-05T02:27:01.863Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_023",
+  "sessionId": "user_023_s1",
+  "timestamp": "2025-06-05T02:27:08.395Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_048",
+  "sessionId": "user_048_s2",
+  "timestamp": "2025-06-05T02:57:20.894Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_048",
+  "sessionId": "user_048_s2",
+  "timestamp": "2025-06-05T02:58:12.032Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_048",
+  "sessionId": "user_048_s2",
+  "timestamp": "2025-06-05T02:58:46.184Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_048",
+  "sessionId": "user_048_s2",
+  "timestamp": "2025-06-05T03:00:03.533Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_013",
+  "sessionId": "user_013_s1",
+  "timestamp": "2025-06-05T04:15:30.491Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_013",
+  "sessionId": "user_013_s1",
+  "timestamp": "2025-06-05T04:16:30.737Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_013",
+  "sessionId": "user_013_s1",
+  "timestamp": "2025-06-05T04:17:36.461Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_013",
+  "sessionId": "user_013_s1",
+  "timestamp": "2025-06-05T04:17:43.620Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_013",
+  "sessionId": "user_013_s1",
+  "timestamp": "2025-06-05T04:19:02.455Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_013",
+  "sessionId": "user_013_s1",
+  "timestamp": "2025-06-05T04:19:35.110Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "payment_failed",
+  "userId": "user_013",
+  "sessionId": "user_013_s1",
+  "timestamp": "2025-06-05T04:19:55.219Z",
+  "page": "/checkout",
+  "properties": {
+   "reason": "card_declined"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_049",
+  "sessionId": "user_049_s1",
+  "timestamp": "2025-06-05T05:11:46.021Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_049",
+  "sessionId": "user_049_s1",
+  "timestamp": "2025-06-05T05:12:35.509Z",
+  "page": "/about",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_027",
+  "sessionId": "user_027_s1",
+  "timestamp": "2025-06-05T07:11:03.181Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_027",
+  "sessionId": "user_027_s1",
+  "timestamp": "2025-06-05T07:11:44.091Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_027",
+  "sessionId": "user_027_s1",
+  "timestamp": "2025-06-05T07:12:57.890Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_027",
+  "sessionId": "user_027_s1",
+  "timestamp": "2025-06-05T07:13:13.500Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_027",
+  "sessionId": "user_027_s1",
+  "timestamp": "2025-06-05T07:13:55.835Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_027",
+  "sessionId": "user_027_s1",
+  "timestamp": "2025-06-05T07:15:19.395Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_017",
+  "sessionId": "user_017_s1",
+  "timestamp": "2025-06-05T08:19:47.778Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_017",
+  "sessionId": "user_017_s1",
+  "timestamp": "2025-06-05T08:20:02.365Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_017",
+  "sessionId": "user_017_s1",
+  "timestamp": "2025-06-05T08:21:13.243Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_017",
+  "sessionId": "user_017_s1",
+  "timestamp": "2025-06-05T08:21:22.763Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_017",
+  "sessionId": "user_017_s1",
+  "timestamp": "2025-06-05T08:22:45.223Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_017",
+  "sessionId": "user_017_s1",
+  "timestamp": "2025-06-05T08:23:56.286Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_017",
+  "sessionId": "user_017_s1",
+  "timestamp": "2025-06-05T08:24:10.193Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "headphones",
+   "revenue": 129
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_036",
+  "sessionId": "user_036_s2",
+  "timestamp": "2025-06-05T12:31:39.109Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_036",
+  "sessionId": "user_036_s2",
+  "timestamp": "2025-06-05T12:31:56.779Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_036",
+  "sessionId": "user_036_s2",
+  "timestamp": "2025-06-05T12:32:21.320Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_036",
+  "sessionId": "user_036_s2",
+  "timestamp": "2025-06-05T12:33:40.452Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_039",
+  "sessionId": "user_039_s1",
+  "timestamp": "2025-06-05T13:39:45.617Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_039",
+  "sessionId": "user_039_s1",
+  "timestamp": "2025-06-05T13:41:12.260Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_039",
+  "sessionId": "user_039_s1",
+  "timestamp": "2025-06-05T13:42:42.323Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_039",
+  "sessionId": "user_039_s1",
+  "timestamp": "2025-06-05T13:43:57.303Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_005",
+  "sessionId": "user_005_s2",
+  "timestamp": "2025-06-05T18:42:02.093Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_005",
+  "sessionId": "user_005_s2",
+  "timestamp": "2025-06-05T18:42:36.729Z",
+  "page": "/about",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_001",
+  "sessionId": "user_001_s1",
+  "timestamp": "2025-06-06T00:20:54.211Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_001",
+  "sessionId": "user_001_s1",
+  "timestamp": "2025-06-06T00:22:01.260Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_001",
+  "sessionId": "user_001_s1",
+  "timestamp": "2025-06-06T00:22:19.924Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_001",
+  "sessionId": "user_001_s1",
+  "timestamp": "2025-06-06T00:22:45.292Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_039",
+  "sessionId": "user_039_s2",
+  "timestamp": "2025-06-06T06:13:14.060Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_039",
+  "sessionId": "user_039_s2",
+  "timestamp": "2025-06-06T06:13:48.683Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_039",
+  "sessionId": "user_039_s2",
+  "timestamp": "2025-06-06T06:15:15.101Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_039",
+  "sessionId": "user_039_s2",
+  "timestamp": "2025-06-06T06:16:06.382Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_003",
+  "sessionId": "user_003_s1",
+  "timestamp": "2025-06-06T06:17:00.036Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_039",
+  "sessionId": "user_039_s2",
+  "timestamp": "2025-06-06T06:17:13.490Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_003",
+  "sessionId": "user_003_s1",
+  "timestamp": "2025-06-06T06:18:18.186Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_039",
+  "sessionId": "user_039_s2",
+  "timestamp": "2025-06-06T06:18:25.195Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_039",
+  "sessionId": "user_039_s2",
+  "timestamp": "2025-06-06T06:18:44.362Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "headphones",
+   "revenue": 129
+  }
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_003",
+  "sessionId": "user_003_s1",
+  "timestamp": "2025-06-06T06:19:38.420Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_003",
+  "sessionId": "user_003_s1",
+  "timestamp": "2025-06-06T06:21:06.022Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_003",
+  "sessionId": "user_003_s1",
+  "timestamp": "2025-06-06T06:21:23.574Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_003",
+  "sessionId": "user_003_s1",
+  "timestamp": "2025-06-06T06:21:54.665Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "payment_failed",
+  "userId": "user_003",
+  "sessionId": "user_003_s1",
+  "timestamp": "2025-06-06T06:22:43.649Z",
+  "page": "/checkout",
+  "properties": {
+   "reason": "card_declined"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_035",
+  "sessionId": "user_035_s2",
+  "timestamp": "2025-06-06T13:17:32.096Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_035",
+  "sessionId": "user_035_s2",
+  "timestamp": "2025-06-06T13:19:02.889Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_035",
+  "sessionId": "user_035_s2",
+  "timestamp": "2025-06-06T13:20:19.225Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_035",
+  "sessionId": "user_035_s2",
+  "timestamp": "2025-06-06T13:21:39.613Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_035",
+  "sessionId": "user_035_s2",
+  "timestamp": "2025-06-06T13:22:01.663Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_035",
+  "sessionId": "user_035_s2",
+  "timestamp": "2025-06-06T13:22:38.845Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_035",
+  "sessionId": "user_035_s2",
+  "timestamp": "2025-06-06T13:24:13.081Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "water-bottle",
+   "revenue": 19
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_037",
+  "sessionId": "user_037_s1",
+  "timestamp": "2025-06-06T15:29:41.674Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_037",
+  "sessionId": "user_037_s1",
+  "timestamp": "2025-06-06T15:29:55.750Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_037",
+  "sessionId": "user_037_s1",
+  "timestamp": "2025-06-06T15:31:01.737Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_037",
+  "sessionId": "user_037_s1",
+  "timestamp": "2025-06-06T15:32:14.313Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_037",
+  "sessionId": "user_037_s1",
+  "timestamp": "2025-06-06T15:33:09.298Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_037",
+  "sessionId": "user_037_s1",
+  "timestamp": "2025-06-06T15:34:05.857Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_037",
+  "sessionId": "user_037_s1",
+  "timestamp": "2025-06-06T15:34:41.988Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "sneakers",
+   "revenue": 89
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_018",
+  "sessionId": "user_018_s1",
+  "timestamp": "2025-06-06T17:58:24.707Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_018",
+  "sessionId": "user_018_s1",
+  "timestamp": "2025-06-06T17:59:08.567Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_018",
+  "sessionId": "user_018_s1",
+  "timestamp": "2025-06-06T18:00:27.723Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_018",
+  "sessionId": "user_018_s1",
+  "timestamp": "2025-06-06T18:00:38.195Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_018",
+  "sessionId": "user_018_s1",
+  "timestamp": "2025-06-06T18:01:40.774Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_018",
+  "sessionId": "user_018_s1",
+  "timestamp": "2025-06-06T18:01:49.329Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "payment_failed",
+  "userId": "user_018",
+  "sessionId": "user_018_s1",
+  "timestamp": "2025-06-06T18:02:51.275Z",
+  "page": "/checkout",
+  "properties": {
+   "reason": "card_declined"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_024",
+  "sessionId": "user_024_s1",
+  "timestamp": "2025-06-06T21:37:25.820Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_024",
+  "sessionId": "user_024_s1",
+  "timestamp": "2025-06-06T21:38:11.577Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_024",
+  "sessionId": "user_024_s1",
+  "timestamp": "2025-06-06T21:39:40.124Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_024",
+  "sessionId": "user_024_s1",
+  "timestamp": "2025-06-06T21:39:48.833Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_024",
+  "sessionId": "user_024_s1",
+  "timestamp": "2025-06-06T21:40:45.954Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_024",
+  "sessionId": "user_024_s1",
+  "timestamp": "2025-06-06T21:41:08.463Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_024",
+  "sessionId": "user_024_s1",
+  "timestamp": "2025-06-06T21:42:10.129Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "sneakers",
+   "revenue": 89
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_051",
+  "sessionId": "user_051_s1",
+  "timestamp": "2025-06-07T05:52:42.583Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_051",
+  "sessionId": "user_051_s1",
+  "timestamp": "2025-06-07T05:53:59.395Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_051",
+  "sessionId": "user_051_s1",
+  "timestamp": "2025-06-07T05:54:40.946Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_051",
+  "sessionId": "user_051_s1",
+  "timestamp": "2025-06-07T05:56:09.016Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_051",
+  "sessionId": "user_051_s1",
+  "timestamp": "2025-06-07T05:57:12.247Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_051",
+  "sessionId": "user_051_s1",
+  "timestamp": "2025-06-07T05:58:08.708Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_051",
+  "sessionId": "user_051_s1",
+  "timestamp": "2025-06-07T05:59:07.732Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "water-bottle",
+   "revenue": 19
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_014",
+  "sessionId": "user_014_s1",
+  "timestamp": "2025-06-07T07:31:57.236Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_014",
+  "sessionId": "user_014_s1",
+  "timestamp": "2025-06-07T07:32:13.954Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_014",
+  "sessionId": "user_014_s1",
+  "timestamp": "2025-06-07T07:32:19.293Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_014",
+  "sessionId": "user_014_s1",
+  "timestamp": "2025-06-07T07:33:40.245Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_008",
+  "sessionId": "user_008_s1",
+  "timestamp": "2025-06-07T07:57:20.324Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_008",
+  "sessionId": "user_008_s1",
+  "timestamp": "2025-06-07T07:58:13.784Z",
+  "page": "/about",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_044",
+  "sessionId": "user_044_s2",
+  "timestamp": "2025-06-07T08:41:56.393Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_044",
+  "sessionId": "user_044_s2",
+  "timestamp": "2025-06-07T08:43:05.281Z",
+  "page": "/about",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_015",
+  "sessionId": "user_015_s2",
+  "timestamp": "2025-06-07T10:15:34.587Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_015",
+  "sessionId": "user_015_s2",
+  "timestamp": "2025-06-07T10:16:19.305Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_015",
+  "sessionId": "user_015_s2",
+  "timestamp": "2025-06-07T10:16:35.537Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_015",
+  "sessionId": "user_015_s2",
+  "timestamp": "2025-06-07T10:16:49.809Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_015",
+  "sessionId": "user_015_s2",
+  "timestamp": "2025-06-07T10:18:22.349Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_015",
+  "sessionId": "user_015_s2",
+  "timestamp": "2025-06-07T10:19:34.174Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_015",
+  "sessionId": "user_015_s2",
+  "timestamp": "2025-06-07T10:20:42.617Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "water-bottle",
+   "revenue": 19
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_038",
+  "sessionId": "user_038_s1",
+  "timestamp": "2025-06-07T10:49:32.207Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_038",
+  "sessionId": "user_038_s1",
+  "timestamp": "2025-06-07T10:50:44.074Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_038",
+  "sessionId": "user_038_s1",
+  "timestamp": "2025-06-07T10:51:13.932Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_038",
+  "sessionId": "user_038_s1",
+  "timestamp": "2025-06-07T10:52:01.129Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_050",
+  "sessionId": "user_050_s1",
+  "timestamp": "2025-06-07T11:33:41.569Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_050",
+  "sessionId": "user_050_s1",
+  "timestamp": "2025-06-07T11:33:59.977Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_050",
+  "sessionId": "user_050_s1",
+  "timestamp": "2025-06-07T11:35:18.993Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_050",
+  "sessionId": "user_050_s1",
+  "timestamp": "2025-06-07T11:36:41.699Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_014",
+  "sessionId": "user_014_s2",
+  "timestamp": "2025-06-07T14:34:22.607Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_014",
+  "sessionId": "user_014_s2",
+  "timestamp": "2025-06-07T14:35:01.912Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_014",
+  "sessionId": "user_014_s2",
+  "timestamp": "2025-06-07T14:36:21.176Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_014",
+  "sessionId": "user_014_s2",
+  "timestamp": "2025-06-07T14:37:03.006Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_014",
+  "sessionId": "user_014_s2",
+  "timestamp": "2025-06-07T14:37:08.456Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_056",
+  "sessionId": "user_056_s1",
+  "timestamp": "2025-06-07T17:37:56.752Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_056",
+  "sessionId": "user_056_s1",
+  "timestamp": "2025-06-07T17:38:21.468Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_056",
+  "sessionId": "user_056_s1",
+  "timestamp": "2025-06-07T17:39:01.669Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_056",
+  "sessionId": "user_056_s1",
+  "timestamp": "2025-06-07T17:39:07.983Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_053",
+  "sessionId": "user_053_s2",
+  "timestamp": "2025-06-07T21:19:17.298Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_053",
+  "sessionId": "user_053_s2",
+  "timestamp": "2025-06-07T21:19:55.824Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_053",
+  "sessionId": "user_053_s2",
+  "timestamp": "2025-06-07T21:20:02.604Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_053",
+  "sessionId": "user_053_s2",
+  "timestamp": "2025-06-07T21:21:01.706Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_053",
+  "sessionId": "user_053_s2",
+  "timestamp": "2025-06-07T21:22:30.938Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_051",
+  "sessionId": "user_051_s2",
+  "timestamp": "2025-06-08T01:20:01.131Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_051",
+  "sessionId": "user_051_s2",
+  "timestamp": "2025-06-08T01:20:31.901Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_051",
+  "sessionId": "user_051_s2",
+  "timestamp": "2025-06-08T01:20:58.549Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_051",
+  "sessionId": "user_051_s2",
+  "timestamp": "2025-06-08T01:22:20.964Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_051",
+  "sessionId": "user_051_s2",
+  "timestamp": "2025-06-08T01:23:29.022Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_051",
+  "sessionId": "user_051_s2",
+  "timestamp": "2025-06-08T01:23:50.555Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "payment_failed",
+  "userId": "user_051",
+  "sessionId": "user_051_s2",
+  "timestamp": "2025-06-08T01:24:34.368Z",
+  "page": "/checkout",
+  "properties": {
+   "reason": "card_declined"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_060",
+  "sessionId": "user_060_s1",
+  "timestamp": "2025-06-08T02:13:19.565Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_060",
+  "sessionId": "user_060_s1",
+  "timestamp": "2025-06-08T02:14:46.457Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_060",
+  "sessionId": "user_060_s1",
+  "timestamp": "2025-06-08T02:15:19.528Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_060",
+  "sessionId": "user_060_s1",
+  "timestamp": "2025-06-08T02:15:44.411Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_042",
+  "sessionId": "user_042_s1",
+  "timestamp": "2025-06-08T02:31:20.645Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_042",
+  "sessionId": "user_042_s1",
+  "timestamp": "2025-06-08T02:32:27.231Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_042",
+  "sessionId": "user_042_s1",
+  "timestamp": "2025-06-08T02:32:39.142Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_042",
+  "sessionId": "user_042_s1",
+  "timestamp": "2025-06-08T02:33:45.422Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_002",
+  "sessionId": "user_002_s2",
+  "timestamp": "2025-06-08T06:24:20.687Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_002",
+  "sessionId": "user_002_s2",
+  "timestamp": "2025-06-08T06:25:38.138Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_002",
+  "sessionId": "user_002_s2",
+  "timestamp": "2025-06-08T06:26:13.469Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_002",
+  "sessionId": "user_002_s2",
+  "timestamp": "2025-06-08T06:26:23.507Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_002",
+  "sessionId": "user_002_s2",
+  "timestamp": "2025-06-08T06:26:52.720Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_002",
+  "sessionId": "user_002_s2",
+  "timestamp": "2025-06-08T06:28:06.873Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_002",
+  "sessionId": "user_002_s2",
+  "timestamp": "2025-06-08T06:28:12.121Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "sneakers",
+   "revenue": 89
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_032",
+  "sessionId": "user_032_s2",
+  "timestamp": "2025-06-08T06:43:57.020Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_032",
+  "sessionId": "user_032_s2",
+  "timestamp": "2025-06-08T06:44:40.062Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_032",
+  "sessionId": "user_032_s2",
+  "timestamp": "2025-06-08T06:45:25.376Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_032",
+  "sessionId": "user_032_s2",
+  "timestamp": "2025-06-08T06:46:38.497Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_032",
+  "sessionId": "user_032_s2",
+  "timestamp": "2025-06-08T06:47:06.944Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_032",
+  "sessionId": "user_032_s2",
+  "timestamp": "2025-06-08T06:48:26.399Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_032",
+  "sessionId": "user_032_s2",
+  "timestamp": "2025-06-08T06:49:29.342Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "water-bottle",
+   "revenue": 19
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_025",
+  "sessionId": "user_025_s1",
+  "timestamp": "2025-06-08T09:44:08.046Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_025",
+  "sessionId": "user_025_s1",
+  "timestamp": "2025-06-08T09:44:57.547Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_025",
+  "sessionId": "user_025_s1",
+  "timestamp": "2025-06-08T09:45:16.961Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_025",
+  "sessionId": "user_025_s1",
+  "timestamp": "2025-06-08T09:45:50.100Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_033",
+  "sessionId": "user_033_s1",
+  "timestamp": "2025-06-08T13:25:58.168Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_033",
+  "sessionId": "user_033_s1",
+  "timestamp": "2025-06-08T13:26:27.943Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_033",
+  "sessionId": "user_033_s1",
+  "timestamp": "2025-06-08T13:26:57.605Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_033",
+  "sessionId": "user_033_s1",
+  "timestamp": "2025-06-08T13:28:25.350Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_041",
+  "sessionId": "user_041_s1",
+  "timestamp": "2025-06-08T14:47:17.619Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_041",
+  "sessionId": "user_041_s1",
+  "timestamp": "2025-06-08T14:47:24.217Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_041",
+  "sessionId": "user_041_s1",
+  "timestamp": "2025-06-08T14:48:40.491Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_041",
+  "sessionId": "user_041_s1",
+  "timestamp": "2025-06-08T14:50:00.115Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_045",
+  "sessionId": "user_045_s1",
+  "timestamp": "2025-06-08T16:47:59.929Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_045",
+  "sessionId": "user_045_s1",
+  "timestamp": "2025-06-08T16:48:44.251Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_022",
+  "sessionId": "user_022_s1",
+  "timestamp": "2025-06-08T16:49:13.511Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_045",
+  "sessionId": "user_045_s1",
+  "timestamp": "2025-06-08T16:49:30.741Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_022",
+  "sessionId": "user_022_s1",
+  "timestamp": "2025-06-08T16:49:40.976Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_022",
+  "sessionId": "user_022_s1",
+  "timestamp": "2025-06-08T16:50:02.543Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_045",
+  "sessionId": "user_045_s1",
+  "timestamp": "2025-06-08T16:50:11.177Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_022",
+  "sessionId": "user_022_s1",
+  "timestamp": "2025-06-08T16:51:34.593Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_035",
+  "sessionId": "user_035_s1",
+  "timestamp": "2025-06-08T17:15:33.353Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_035",
+  "sessionId": "user_035_s1",
+  "timestamp": "2025-06-08T17:16:56.509Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_035",
+  "sessionId": "user_035_s1",
+  "timestamp": "2025-06-08T17:17:32.993Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_035",
+  "sessionId": "user_035_s1",
+  "timestamp": "2025-06-08T17:17:38.780Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_035",
+  "sessionId": "user_035_s1",
+  "timestamp": "2025-06-08T17:19:01.350Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_035",
+  "sessionId": "user_035_s1",
+  "timestamp": "2025-06-08T17:20:15.995Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_035",
+  "sessionId": "user_035_s1",
+  "timestamp": "2025-06-08T17:21:04.297Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "headphones",
+   "revenue": 129
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_046",
+  "sessionId": "user_046_s1",
+  "timestamp": "2025-06-08T18:07:49.836Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_046",
+  "sessionId": "user_046_s1",
+  "timestamp": "2025-06-08T18:08:38.240Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_046",
+  "sessionId": "user_046_s1",
+  "timestamp": "2025-06-08T18:08:59.127Z",
+  "page": "/products/water-bottle",
+  "properties": {
+   "product": "water-bottle"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_046",
+  "sessionId": "user_046_s1",
+  "timestamp": "2025-06-08T18:10:30.994Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_029",
+  "sessionId": "user_029_s1",
+  "timestamp": "2025-06-08T18:35:17.144Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_029",
+  "sessionId": "user_029_s1",
+  "timestamp": "2025-06-08T18:35:52.391Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_029",
+  "sessionId": "user_029_s1",
+  "timestamp": "2025-06-08T18:36:27.956Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_029",
+  "sessionId": "user_029_s1",
+  "timestamp": "2025-06-08T18:37:26.885Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_004",
+  "sessionId": "user_004_s1",
+  "timestamp": "2025-06-08T22:26:22.670Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_004",
+  "sessionId": "user_004_s1",
+  "timestamp": "2025-06-08T22:27:33.652Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_004",
+  "sessionId": "user_004_s1",
+  "timestamp": "2025-06-08T22:28:51.274Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_004",
+  "sessionId": "user_004_s1",
+  "timestamp": "2025-06-08T22:29:52.075Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_004",
+  "sessionId": "user_004_s1",
+  "timestamp": "2025-06-08T22:30:05.068Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_010",
+  "sessionId": "user_010_s2",
+  "timestamp": "2025-06-08T22:48:48.048Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_010",
+  "sessionId": "user_010_s2",
+  "timestamp": "2025-06-08T22:49:09.294Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_010",
+  "sessionId": "user_010_s2",
+  "timestamp": "2025-06-08T22:49:36.006Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_010",
+  "sessionId": "user_010_s2",
+  "timestamp": "2025-06-08T22:50:04.574Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_010",
+  "sessionId": "user_010_s2",
+  "timestamp": "2025-06-08T22:50:14.633Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_009",
+  "sessionId": "user_009_s1",
+  "timestamp": "2025-06-09T00:43:09.410Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_009",
+  "sessionId": "user_009_s1",
+  "timestamp": "2025-06-09T00:44:09.286Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_009",
+  "sessionId": "user_009_s1",
+  "timestamp": "2025-06-09T00:45:01.412Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_009",
+  "sessionId": "user_009_s1",
+  "timestamp": "2025-06-09T00:45:52.867Z",
+  "page": "/products/headphones",
+  "properties": {
+   "product": "headphones",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_009",
+  "sessionId": "user_009_s1",
+  "timestamp": "2025-06-09T00:46:18.725Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_028",
+  "sessionId": "user_028_s1",
+  "timestamp": "2025-06-09T02:28:55.308Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_028",
+  "sessionId": "user_028_s1",
+  "timestamp": "2025-06-09T02:29:33.185Z",
+  "page": "/about",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_055",
+  "sessionId": "user_055_s1",
+  "timestamp": "2025-06-09T07:12:00.670Z",
+  "page": "/",
+  "properties": {
+   "referrer": "instagram"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_055",
+  "sessionId": "user_055_s1",
+  "timestamp": "2025-06-09T07:12:52.015Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_055",
+  "sessionId": "user_055_s1",
+  "timestamp": "2025-06-09T07:13:27.773Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_055",
+  "sessionId": "user_055_s1",
+  "timestamp": "2025-06-09T07:14:32.756Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_055",
+  "sessionId": "user_055_s1",
+  "timestamp": "2025-06-09T07:15:41.931Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_055",
+  "sessionId": "user_055_s1",
+  "timestamp": "2025-06-09T07:16:08.184Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "order_completed",
+  "userId": "user_055",
+  "sessionId": "user_055_s1",
+  "timestamp": "2025-06-09T07:17:09.917Z",
+  "page": "/checkout/success",
+  "properties": {
+   "product": "sneakers",
+   "revenue": 89
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_030",
+  "sessionId": "user_030_s1",
+  "timestamp": "2025-06-09T08:14:25.638Z",
+  "page": "/",
+  "properties": {
+   "referrer": "direct"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_030",
+  "sessionId": "user_030_s1",
+  "timestamp": "2025-06-09T08:15:42.479Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_030",
+  "sessionId": "user_030_s1",
+  "timestamp": "2025-06-09T08:17:16.912Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_049",
+  "sessionId": "user_049_s2",
+  "timestamp": "2025-06-09T08:18:12.283Z",
+  "page": "/",
+  "properties": {
+   "referrer": "google"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_030",
+  "sessionId": "user_030_s1",
+  "timestamp": "2025-06-09T08:18:13.259Z",
+  "page": "/products/backpack",
+  "properties": {
+   "product": "backpack",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_030",
+  "sessionId": "user_030_s1",
+  "timestamp": "2025-06-09T08:18:56.393Z",
+  "page": "/cart",
+  "properties": {}
+ },
+ {
+  "event": "checkout_started",
+  "userId": "user_030",
+  "sessionId": "user_030_s1",
+  "timestamp": "2025-06-09T08:19:17.629Z",
+  "page": "/checkout",
+  "properties": {}
+ },
+ {
+  "event": "page_view",
+  "userId": "user_049",
+  "sessionId": "user_049_s2",
+  "timestamp": "2025-06-09T08:19:37.245Z",
+  "page": "/about",
+  "properties": {}
+ },
+ {
+  "event": "payment_failed",
+  "userId": "user_030",
+  "sessionId": "user_030_s1",
+  "timestamp": "2025-06-09T08:20:48.689Z",
+  "page": "/checkout",
+  "properties": {
+   "reason": "card_declined"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_002",
+  "sessionId": "user_002_s1",
+  "timestamp": "2025-06-09T08:31:10.910Z",
+  "page": "/",
+  "properties": {
+   "referrer": "newsletter"
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_002",
+  "sessionId": "user_002_s1",
+  "timestamp": "2025-06-09T08:31:38.979Z",
+  "page": "/products",
+  "properties": {}
+ },
+ {
+  "event": "product_viewed",
+  "userId": "user_002",
+  "sessionId": "user_002_s1",
+  "timestamp": "2025-06-09T08:33:04.930Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers"
+  }
+ },
+ {
+  "event": "add_to_cart",
+  "userId": "user_002",
+  "sessionId": "user_002_s1",
+  "timestamp": "2025-06-09T08:34:25.507Z",
+  "page": "/products/sneakers",
+  "properties": {
+   "product": "sneakers",
+   "quantity": 1
+  }
+ },
+ {
+  "event": "page_view",
+  "userId": "user_002",
+  "sessionId": "user_002_s1",
+  "timestamp": "2025-06-09T08:35:11.116Z",
+  "page": "/cart",
+  "properties": {}
+ }
+]

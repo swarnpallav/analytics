@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collector test shop</title>
+  <!-- Simulates a site that already uses GTM/gtag: events go to window.dataLayer -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+  </script>
+  <!-- The only line a real site needs to add: -->
+  <script async src="/collector.js" data-site="test-shop" data-debug="true"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; color: #0f172a; }
+    nav a { margin-right: 12px; }
+    button { padding: 8px 14px; margin: 4px 4px 4px 0; border-radius: 8px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; }
+    .note { color: #475569; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Test shop</h1>
+  <p class="note">Every click here is captured by <code>collector.js</code>. Open the console to watch, then go back to
+    the dashboard's Import tab and hit "Analyse live events".</p>
+  <nav>
+    <a href="/" data-route="/shop">Home</a>
+    <a href="/" data-route="/shop/products">Products</a>
+    <a href="/" data-route="/shop/cart">Cart</a>
+  </nav>
+  <h2 id="page-title">Home</h2>
+  <div id="actions"></div>
+
+  <script>
+    // A tiny single-page app: navigation uses history.pushState, which the collector records as page views.
+    var screens = {
+      '/shop': { title: 'Home', actions: [['Browse products', function () { go('/shop/products'); }]] },
+      '/shop/products': { title: 'Products', actions: [
+        ['View sneakers', function () { gtag('event', 'view_item', { item_id: 'sneakers', value: 89 }); }],
+        ['Add sneakers to cart', function () { dataLayer.push({ event: 'add_to_cart', ecommerce: { item_id: 'sneakers', value: 89 } }); go('/shop/cart'); }]
+      ] },
+      '/shop/cart': { title: 'Cart', actions: [
+        ['Begin checkout', function () { gtag('event', 'begin_checkout', { value: 89 }); go('/shop/checkout'); }]
+      ] },
+      '/shop/checkout': { title: 'Checkout', actions: [
+        ['Pay', function () { gtag('event', 'purchase', { transaction_id: 'T' + Date.now(), value: 89 }); go('/shop/thanks'); }],
+        ['Fail payment', function () { window.navaigate && navaigate.track('payment_failed', { reason: 'card_declined' }); }]
+      ] },
+      '/shop/thanks': { title: 'Thanks for your order!', actions: [] }
+    };
+    function render() {
+      var screen = screens[location.pathname] || screens['/shop'];
+      document.getElementById('page-title').textContent = screen.title;
+      var box = document.getElementById('actions');
+      box.innerHTML = '';
+      screen.actions.forEach(function (a) {
+        var b = document.createElement('button');
+        b.textContent = a[0];
+        b.onclick = a[1];
+        box.appendChild(b);
+      });
+    }
+    function go(path) { history.pushState({}, '', path); render(); }
+    document.querySelectorAll('nav a').forEach(function (a) {
+      a.onclick = function (e) { e.preventDefault(); go(a.dataset.route); };
+    });
+    window.addEventListener('popstate', render);
+    history.replaceState({}, '', '/shop');
+    render();
+  </script>
+</body>
+</html>
