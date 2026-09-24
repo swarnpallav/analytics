@@ -2,7 +2,8 @@
   background: white;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: #111827;
 }
 
 .config-section h2 {
@@ -30,6 +31,8 @@
   border: 2px solid #ddd;
   border-radius: 6px;
   font-size: 1rem;
+  color: #111827;
+  background: #fff;
 }
 
 .steps-config h3 {
@@ -51,6 +54,7 @@
   padding: 1rem;
   background: #f8f9fa;
   border-radius: 8px;
+  color: #111827;
 }
 
 .step-number {
@@ -81,6 +85,7 @@
   background: #dee2e6;
   border-radius: 4px;
   cursor: pointer;
+  color: #111827;
 }
 
 .funnel-chart {
@@ -99,6 +104,7 @@
   background: #f8f9fa;
   border-radius: 8px;
   padding: 1.5rem;
+  color: #111827;
 }
 
 .stat-title {

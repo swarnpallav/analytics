@@ -2,7 +2,8 @@
   background: white;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: #111827;
 }
 
 .analysis-section {
@@ -23,6 +24,7 @@
   background: #f8f9fa;
   border-radius: 8px;
   min-width: 120px;
+  color: #111827;
 }
 
 .stat-value {
@@ -51,6 +53,7 @@
   padding: 1rem;
   background: #f8f9fa;
   border-radius: 8px;
+  color: #111827;
 }
 
 .transition-flow {
@@ -59,7 +62,8 @@
   gap: 1rem;
 }
 
-.from-event, .to-event {
+.from-event,
+.to-event {
   padding: 0.5rem 1rem;
   background: #667eea;
   color: white;
@@ -79,6 +83,7 @@
   margin-bottom: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  color: #111827;
 }
 
 .path-item:hover {
@@ -135,6 +140,7 @@
   background: #f8f9fa;
   border-radius: 8px;
   padding: 1.5rem;
+  color: #111827;
 }
 
 .insight-card h4 {
@@ -142,13 +148,15 @@
   color: #333;
 }
 
-.entry-points, .exit-points {
+.entry-points,
+.exit-points {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.entry-point, .exit-point {
+.entry-point,
+.exit-point {
   padding: 0.5rem 1rem;
   background: #667eea;
   color: white;
@@ -169,6 +177,7 @@
   padding: 0.75rem;
   background: white;
   border-radius: 6px;
+  color: #111827;
 }
 
 .heat-score {
