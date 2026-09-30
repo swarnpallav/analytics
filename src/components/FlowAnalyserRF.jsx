@@ -13,9 +13,23 @@ const topCounts = (events, key, n = 8) => Object.entries(_.countBy(events.filter
   .sort((a, b) => b.value - a.value)
   .slice(0, n);
 
+// Edges pick a side per direction: snake rows and page lanes also run right -> left, so nodes need
+// source and target handles on both sides. React Flow silently drops an edge whose handle id is missing.
+const SideHandles = () => (
+  <>
+    <Handle type="target" position={Position.Top} id="top" style={{ opacity: 0 }} />
+    <Handle type="target" position={Position.Left} id="left" style={{ opacity: 0 }} />
+    <Handle type="target" position={Position.Right} id="right" style={{ opacity: 0 }} />
+    <Handle type="source" position={Position.Right} id="right" style={{ opacity: 0 }} />
+    <Handle type="source" position={Position.Left} id="left" style={{ opacity: 0 }} />
+    <Handle type="source" position={Position.Bottom} id="bottom" style={{ opacity: 0 }} />
+  </>
+);
+
 function compactNode(id, label, position) {
   return {
     id,
+    type: 'compactNode',
     data: { label },
     position,
     style: {
@@ -27,6 +41,7 @@ function compactNode(id, label, position) {
       height: 90,
       fontSize: 14,
       lineHeight: 1.3,
+      textAlign: 'center',
       boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
     }
   };
@@ -155,8 +170,7 @@ function buildLanesByPage(events, nodeStyle, edgeColor) {
 
 const EventNode = ({ data }) => (
   <div className="flow-node">
-    <Handle type="target" position={Position.Top} id="top" style={{ opacity: 0 }} />
-    <Handle type="target" position={Position.Left} id="left" style={{ opacity: 0 }} />
+    <SideHandles />
     <div className="fn-header">
       {data.page && <span className="badge-screen">{data.page}</span>}
       <span className="badge-screen" style={{ background:'#eef2ff', borderColor:'#c7d2fe', color:'#3730a3' }}>Step {data.step}</span>
@@ -165,9 +179,15 @@ const EventNode = ({ data }) => (
       <h4 className="title">{data.name}</h4>
       {data.group && <p className="subtitle">{data.group}</p>}
     </div>
-    <Handle type="source" position={Position.Right} id="right" style={{ opacity: 0 }} />
-    <Handle type="source" position={Position.Bottom} id="bottom" style={{ opacity: 0 }} />
   </div>
+);
+
+// Box styling comes from the node's style (see compactNode).
+const CompactNode = ({ data }) => (
+  <>
+    <SideHandles />
+    {data.label}
+  </>
 );
 
 const LaneNode = ({ data }) => (
@@ -185,7 +205,7 @@ const LaneNode = ({ data }) => (
   </div>
 );
 
-const nodeTypes = { eventNode: EventNode, laneNode: LaneNode };
+const nodeTypes = { eventNode: EventNode, compactNode: CompactNode, laneNode: LaneNode };
 
 function CountChart({ title, data, color }) {
   return (

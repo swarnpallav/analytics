@@ -258,6 +258,33 @@
   min-width: 0;
 }
 
+.record-steps {
+  margin: 0 0 1rem 0;
+  padding-left: 1.25rem;
+}
+
+.record-steps li {
+  margin-bottom: 0.75rem;
+}
+
+.record-steps .snippet {
+  margin-top: 0.5rem;
+}
+
+.record-url {
+  flex: 1 1 16rem;
+  min-width: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #c7d2fe;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.record-url:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
 .input-actions select {
   max-width: 100%;
   text-overflow: ellipsis;

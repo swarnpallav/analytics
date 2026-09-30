@@ -11,43 +11,52 @@ Visualise funnels and user journeys from the analytics events your website alrea
 ## Getting data in
 
 Any of these work; the event, page, timestamp, user and session fields are detected automatically and can be
-remapped on the Import tab.
+remapped on the Import tab. None of them needs a server.
 
-- **Script tag (recommended)**: add one line to your site's `<head>`:
-
-  ```html
-  <script async src="https://YOUR-NAVAIGATE-HOST/collector.js"></script>
-  ```
-
-  It records page views (including SPA navigations) and picks up events the site already sends through
-  GTM/gtag (`dataLayer`), Segment and Mixpanel, with an anonymous visitor ID and a 30-minute session ID.
-  Custom events: `window.navaigate.track('signup_clicked', { plan: 'pro' })`. Optional attributes:
-  `data-site`, `data-endpoint`, `data-pageviews="false"`, `data-debug="true"`. Try it locally at
-  `http://localhost:5173/collector-test.html`, then "Analyse live events" on the Import tab.
-- **DevTools console (no site access needed)**: on the Import tab, switch to "DevTools console", copy the
-  snippet, and paste it into the Console of any page (Chrome may ask you to type `allow pasting` first). It records
-  the same events as the script tag, including anything already in `dataLayer`, but only in your tab, and it stops on
-  a full page reload (paste again, or save it under Sources → Snippets to re-run quickly). Sites with a strict
-  Content-Security-Policy `connect-src` may block sending events.
+- **Record a session (recommended)**: on the Import tab, enter a page address and click "Open site to record". In the
+  tab that opens, paste the console snippet into DevTools (Chrome may ask you to type `allow pasting` first). It
+  records page views (including SPA navigations) and the events the site already sends through GTM/gtag
+  (`dataLayer`), Segment and Mixpanel, with an anonymous visitor ID and a 30-minute session ID. Custom events:
+  `window.navaigate.track('signup_clicked', { plan: 'pro' })`.
+  - Events go straight back to the dashboard tab with `window.opener.postMessage` and are kept in this browser's
+    IndexedDB, so they survive a dashboard reload and never leave the machine. Keep the dashboard tab open while
+    recording. "Export JSON" saves them to share; a teammate loads the file with Upload.
+  - A full page reload in the recording tab stops recording; paste again, or save the snippet under
+    Sources → Snippets to re-run it quickly.
+  - A site that sends `Cross-Origin-Opener-Policy: same-origin` cuts the link between the two tabs, so it can't be
+    recorded this way; the console says "not connected to NavAIgate" when that happens.
+  - "Use the test page" opens `collector-test.html`, a small shop that records without pasting anything.
 - **Upload / paste** a JSON, NDJSON or CSV export. Segment, GA4 (BigQuery), Mixpanel, Amplitude and GTM
   `dataLayer` shapes are recognised; so is any flat `{ event, userId, timestamp, page }` style.
-- **Push events** to the server: `POST /api/events` with one event, an array, or `{ "events": [...] }`.
-  Events are appended to the live stream (`GET /api/events`, `DELETE /api/events` to clear), which the app
-  loads on startup.
-- **Saved datasets**: JSON files in `datasets/` show up under "Load saved dataset".
 - **Demo data**: a synthetic e-commerce dataset (`public/demo-events.json`).
 
 ## Getting started
 
 ```bash
 npm install
-npm run dev      # Vite client on :5173 + API server on :8787
+npm run dev:client   # the dashboard on :5173; all you need to record and analyse
+npm run build        # static files in dist/ (including collector.js); host them anywhere
 ```
+
+## Optional server
+
+`server.js` (`npm run dev` starts it alongside the dashboard on :8787) is only needed for the AI features and the
+server-side collection below. The dashboard no longer reads from it.
+
+- **Script tag**: `<script async src="https://YOUR-NAVAIGATE-HOST/collector.js"></script>` POSTs visitors' events to
+  `/api/events` (attributes: `data-site`, `data-endpoint`, `data-pageviews="false"`, `data-debug="true"`,
+  `data-team`, `data-recorder`). Also `POST /api/events` with one event, an array or `{ "events": [...] }`.
+- **Teams and recorders**: `GET /api/events?recorder=<id>` or `?team=<name>` filters the stream; `DELETE
+  /api/events?recorder=<id>` removes one recorder's events, and clearing everything needs `ADMIN_TOKEN` in `.env` sent
+  as the `X-Admin-Token` header. Events without a team are assigned by page path using `config/teams.json` (paths
+  shipped there are placeholders); `GET`/`POST /api/teams` list and add teams (`datasets/meta/teams.json`). None of
+  this is authenticated.
+- **Saved datasets**: JSON files in `datasets/` show up under "Load saved dataset".
 
 ## AI features
 
 Chat, voice and AI insights are disabled by default. To enable them, set `ENABLE_AI=true`,
-`VITE_ENABLE_AI=true` and `OPENAI_API_KEY` in `.env` (see `env.example`).
+`VITE_ENABLE_AI=true` and `OPENAI_API_KEY` in `.env` (see `env.example`), and run the optional server.
 
 ## Development
 

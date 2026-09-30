@@ -128,3 +128,93 @@
   font-size: 0.9rem;
   color: #666;
 }
+
+.journey-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.journey-filter label {
+  font-weight: 500;
+  color: #333;
+}
+
+.journey-select {
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-overflow: ellipsis;
+}
+
+.journey-note {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.step-search {
+  position: relative;
+  max-width: 480px;
+}
+
+.step-search input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.step-search input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.step-search-list {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  max-height: 320px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0.25rem 0;
+  list-style: none;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.step-search-group {
+  padding: 0.5rem 0.75rem 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+}
+
+.step-search-option {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.step-search-option.active {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.step-search-empty {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  color: #888;
+}

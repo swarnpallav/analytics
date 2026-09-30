@@ -4,7 +4,7 @@ import { FIELDS, listFieldPaths, parseRecords } from '../lib/events';
 import ConnectSite from './ConnectSite';
 import './DataImporter.css';
 
-const DataImporter = ({ records, source, mapping, onDataImport, onMappingChange }) => {
+const DataImporter = ({ records, source, mapping, onDataImport, onMappingChange, onLoadRecordings }) => {
   const [jsonInput, setJsonInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -70,7 +70,7 @@ const DataImporter = ({ records, source, mapping, onDataImport, onMappingChange 
       <div className="importer-section">
         <h2>📥 Bring in your events</h2>
 
-        <ConnectSite onLoadLive={() => loadUrl('/api/events', 'Live (collector)')} />
+        <ConnectSite onLoadRecordings={onLoadRecordings} />
 
         <h3>📁 Or import an export</h3>
         <p>

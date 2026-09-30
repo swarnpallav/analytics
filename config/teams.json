@@ -1,0 +1,5 @@
+{
+  "seller": ["/replace-me/seller/*"],
+  "broker": ["/replace-me/seller/broker/*"],
+  "seeker": ["/replace-me/buy/*", "/replace-me/rent/*"]
+}

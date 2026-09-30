@@ -32,7 +32,7 @@ export default defineConfig([
   },
   {
     // Runs on arbitrary third-party sites, so it stays ES5 (which requires a binding in every catch).
-    files: ['collector/**/*.js'],
+    files: ['public/collector.js'],
     languageOptions: { ecmaVersion: 5, sourceType: 'script', globals: globals.browser },
     rules: { 'no-unused-vars': ['error', { caughtErrors: 'none' }] },
   },

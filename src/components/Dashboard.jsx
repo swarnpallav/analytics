@@ -4,7 +4,8 @@ import FunnelVisualizer from './FunnelVisualizer';
 import FlowAnalyserRF from './FlowAnalyserRF';
 import UserFlowDiagram from './UserFlowDiagram';
 import InsightsDashboard from './InsightsDashboard';
-import { detectMapping, normalizeEvents, parseRecords } from '../lib/events';
+import { detectMapping, normalizeEvents } from '../lib/events';
+import { getRecordings, onRecordingsChange } from '../lib/recordings';
 import './Dashboard.css';
 
 const tabs = [
@@ -20,6 +21,8 @@ const Dashboard = () => {
   const [source, setSource] = useState('');
   const [mapping, setMapping] = useState({});
   const [activeTab, setActiveTab] = useState('import');
+  // True while the loaded data is this browser's recordings, which then follow new and cleared events.
+  const [showingRecordings, setShowingRecordings] = useState(false);
 
   const events = useMemo(() => (records && mapping.name ? normalizeEvents(records, mapping) : null), [records, mapping]);
 
@@ -27,18 +30,37 @@ const Dashboard = () => {
     setRecords(imported);
     setSource(label);
     setMapping(detectMapping(imported));
+    setShowingRecordings(false);
   };
 
-  // Start with whatever was last pushed to the server (POST /api/events), if anything.
+  const loadRecordings = () => getRecordings()
+    .then(recs => {
+      if (!recs.length) return;
+      handleDataImport(recs, 'My recordings');
+      setShowingRecordings(true);
+    })
+    .catch(() => {});
+
+  // Keep the field mapping while events arrive; once they're cleared, unload so every tab empties.
   useEffect(() => {
-    fetch('/api/events')
-      .then(r => (r.ok ? r.text() : ''))
-      .then(text => {
-        const live = text ? parseRecords(text) : [];
-        if (live.length) handleDataImport(live, 'Live (collector)');
+    if (!showingRecordings) return undefined;
+    return onRecordingsChange(() => getRecordings()
+      .then(recs => {
+        if (recs.length) {
+          setRecords(recs);
+        } else {
+          setRecords(null);
+          setSource('');
+          setMapping({});
+          setShowingRecordings(false);
+        }
       })
-      .catch(() => {});
-  }, []);
+      .catch(() => {}));
+  }, [showingRecordings]);
+
+  // Start with the recordings kept in this browser, if any. Runs once on mount.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { loadRecordings(); }, []);
 
   const ActiveComponent = tabs.find(tab => tab.id === activeTab)?.component;
   const ready = Boolean(events?.length);
@@ -75,6 +97,7 @@ const Dashboard = () => {
             mapping={mapping}
             onDataImport={handleDataImport}
             onMappingChange={setMapping}
+            onLoadRecordings={loadRecordings}
           />
         )}
       </main>

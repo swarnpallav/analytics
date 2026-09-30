@@ -10,8 +10,23 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
   </script>
-  <!-- The only line a real site needs to add: -->
-  <script async src="/collector.js" data-site="test-shop" data-debug="true"></script>
+  <!-- Open this page with "Use the test page" on the dashboard. It shares the dashboard's origin, so it loads the
+       collector itself, reads the dashboard's recording token, and sends events back to the dashboard tab. -->
+  <script>
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = '/collector.js';
+      s.setAttribute('data-site', 'test-shop');
+      s.setAttribute('data-debug', 'true');
+      s.setAttribute('data-transport', 'opener');
+      s.setAttribute('data-dashboard', location.origin);
+      try {
+        s.setAttribute('data-token', localStorage.getItem('nvg_recorder') || '');
+      } catch (e) { /* storage blocked: the dashboard will ignore these events */ }
+      document.head.appendChild(s);
+    })();
+  </script>
   <style>
     body { font-family: system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; color: #0f172a; }
     nav a { margin-right: 12px; }
@@ -22,7 +37,8 @@
 <body>
   <h1>Test shop</h1>
   <p class="note">Every click here is captured by <code>collector.js</code>. Open the console to watch, then go back to
-    the dashboard's Import tab and hit "Analyse live events".</p>
+    the dashboard's Import tab and hit "Analyse my recordings". "Clear recordings" removes them again. Keep the dashboard
+    tab open: that's where events are sent.</p>
   <nav>
     <a href="/" data-route="/shop">Home</a>
     <a href="/" data-route="/shop/products">Products</a>

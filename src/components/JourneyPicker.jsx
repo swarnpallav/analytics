@@ -2,10 +2,12 @@ import { formatTs } from '../lib/events';
 import './UserFlowDiagram.css';
 
 // Lets the user pick one journey (session/user) when the dataset contains many.
-export default function JourneyPicker({ journeys, value, onChange, className = 'rf-select' }) {
+// With allLabel, an extra first option (value '') stands for every journey.
+export default function JourneyPicker({ journeys, value, onChange, className = 'rf-select', allLabel, id }) {
   if (journeys.size <= 1) return null;
   return (
-    <select className={className} value={value} onChange={e => onChange(e.target.value)}>
+    <select id={id} className={className} value={value} onChange={e => onChange(e.target.value)}>
+      {allLabel && <option value="">{allLabel}</option>}
       {Array.from(journeys.entries()).map(([key, evs]) => (
         <option key={key} value={key}>
           {key} ({evs.length} events{Number.isFinite(evs[0].ts) ? `, ${formatTs(evs[0].ts)}` : ''})

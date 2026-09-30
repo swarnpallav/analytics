@@ -10,6 +10,9 @@ import {
   Legend,
 } from 'chart.js';
 import _ from 'lodash';
+import { groupJourneys } from '../lib/events';
+import JourneyPicker from './JourneyPicker';
+import StepSearch from './StepSearch';
 import './FunnelVisualizer.css';
 
 ChartJS.register(
@@ -26,17 +29,22 @@ const matches = (e, s) => (s.type === 'page' ? e.page === s.value : e.name === s
 
 const FunnelVisualizer = ({ events }) => {
   const [selectedSteps, setSelectedSteps] = useState([]);
+  const [journey, setJourney] = useState(''); // '' means all journeys
 
   // Count conversions per user when users are known, otherwise per session.
   const unit = events.some(e => e.userId) ? 'user' : events.some(e => e.sessionId) ? 'session' : null;
   const unitLabel = unit === 'session' ? 'Sessions' : 'Users';
 
+  // Step options come from every event, so the funnel keeps its steps while switching journeys.
   const availableEvents = useMemo(() => _.uniq(events.map(e => e.name)).sort(), [events]);
   const availablePages = useMemo(() => _.uniq(events.map(e => e.page).filter(Boolean)).sort(), [events]);
 
+  const allJourneys = useMemo(() => groupJourneys(events), [events]);
+  const scoped = (journey && allJourneys.get(journey)) || events;
+
   const funnelData = useMemo(() => {
     if (!selectedSteps.length) return null;
-    const journeys = Object.values(_.groupBy(events, e => (unit === 'user' ? e.userId : unit === 'session' ? e.sessionId : 'all')));
+    const journeys = Object.values(_.groupBy(scoped, e => (unit === 'user' ? e.userId : unit === 'session' ? e.sessionId : 'all')));
 
     // For each journey, how many steps were completed in order (events are already time-sorted).
     const reached = journeys.map(evs => {
@@ -58,7 +66,7 @@ const FunnelVisualizer = ({ events }) => {
       stepConversion: index === 0 ? 100 : (counts[index - 1].users > 0 ? Math.round((c.users / counts[index - 1].users) * 100) : 0),
       dropOff: index > 0 ? counts[index - 1].users - c.users : 0
     }));
-  }, [events, selectedSteps, unit]);
+  }, [scoped, selectedSteps, unit]);
 
   const chartData = useMemo(() => {
     if (!funnelData) return null;
@@ -102,10 +110,7 @@ const FunnelVisualizer = ({ events }) => {
     }
   };
 
-  const handleStepAdd = (encoded) => {
-    if (!encoded) return;
-    const [type, ...rest] = encoded.split(':');
-    const step = { type, value: rest.join(':') };
+  const handleStepAdd = (step) => {
     if (!selectedSteps.some(s => s.type === step.type && s.value === step.value)) {
       setSelectedSteps([...selectedSteps, step]);
     }
@@ -133,20 +138,25 @@ const FunnelVisualizer = ({ events }) => {
             : ' No user or session field is mapped, so the whole dataset is treated as a single journey. Map one on the Import tab for real conversion rates.'}
         </p>
 
+        {allJourneys.size > 1 && (
+          <div className="journey-filter">
+            <label htmlFor="funnel-journey">Journeys</label>
+            <JourneyPicker
+              id="funnel-journey"
+              journeys={allJourneys}
+              value={journey}
+              onChange={setJourney}
+              allLabel={`All journeys (${allJourneys.size})`}
+              className="journey-select"
+            />
+            {journey && <span className="journey-note">Showing which steps this one journey reached.</span>}
+          </div>
+        )}
+
         <div className="steps-config">
           <h3>Funnel Steps</h3>
           <div className="add-step">
-            <select onChange={(e) => handleStepAdd(e.target.value)} value="">
-              <option value="">Add a step…</option>
-              <optgroup label="Events">
-                {availableEvents.map(name => <option key={`e-${name}`} value={`event:${name}`}>{name}</option>)}
-              </optgroup>
-              {availablePages.length > 0 && (
-                <optgroup label="Pages / screens">
-                  {availablePages.map(page => <option key={`p-${page}`} value={`page:${page}`}>{page}</option>)}
-                </optgroup>
-              )}
-            </select>
+            <StepSearch events={availableEvents} pages={availablePages} selected={selectedSteps} onAdd={handleStepAdd} />
           </div>
 
           <div className="steps-list">

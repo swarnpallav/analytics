@@ -14,10 +14,17 @@
  *   data-site="my-shop"                      label events (default: location.hostname)
  *   data-pageviews="false"                   disable automatic page views
  *   data-debug="true"                        log captured events to the console
+ *   data-team="broker"                       owning team (default: worked out by the server from the page path)
+ *   data-recorder="<id>"                     who recorded the events, so they can clear only their own
  * Manual tracking: window.navaigate.track('signup_clicked', { plan: 'pro' })
  *
- * DevTools console mode: set window.NAVAIGATE_CONFIG = { endpoint, site, pageviews, debug } and paste
- * this file into the console. Config keys mirror the data-* attributes above.
+ * DevTools console mode: set window.NAVAIGATE_CONFIG = { endpoint, site, pageviews, debug, team, recorder }
+ * and paste this file into the console. Config keys mirror the data-* attributes above.
+ *
+ * Serverless mode (transport: 'opener'): instead of POSTing, batches go to the NavAIgate tab that opened this one,
+ * via window.opener.postMessage. Needs:
+ *   transport="opener"   dashboard="<NavAIgate origin>"   token="<the dashboard's recording token>"
+ * A site sending Cross-Origin-Opener-Policy: same-origin cuts the link to the opener, so nothing can be sent.
  */
 (function () {
   var config = window.NAVAIGATE_CONFIG || null;
@@ -35,6 +42,11 @@
   var endpoint = attr('endpoint') || origin + '/api/events';
   var site = attr('site') || location.hostname;
   var debug = attr('debug') === 'true';
+  var team = attr('team') || undefined;
+  var recorder = attr('recorder') || undefined;
+  var toOpener = attr('transport') === 'opener';
+  var dashboard = attr('dashboard');
+  var token = attr('token');
 
   var SESSION_TIMEOUT_MS = 30 * 60 * 1000;
   var FLUSH_INTERVAL_MS = 2000;
@@ -121,6 +133,8 @@
       title: document.title,
       referrer: document.referrer,
       site: site,
+      team: team,
+      recorder: recorder,
       source: source,
       properties: safeProps(properties)
     };
@@ -129,10 +143,29 @@
     if (queue.length >= MAX_BATCH) flush();
   }
 
+  var openerWarned = false;
+  function sendToOpener(events) {
+    var target = null;
+    try { target = window.opener && !window.opener.closed ? window.opener : null; } catch (e) { /* access denied */ }
+    if (!target) {
+      if (!openerWarned) {
+        openerWarned = true;
+        console.warn('[navaigate] not connected to NavAIgate: open this page with "Open site to record" on the ' +
+          'dashboard, then paste the snippet again. If it was opened that way, this site cuts the link between ' +
+          'windows (Cross-Origin-Opener-Policy), so events cannot be sent. Events are dropped until then.');
+      }
+      return;
+    }
+    try {
+      target.postMessage({ type: 'navaigate:events', token: token, events: events }, dashboard);
+    } catch (e) { /* the dashboard tab navigated away; analytics must never break the site */ }
+  }
+
   // text/plain keeps the request CORS-simple (no preflight) and works with sendBeacon.
   function flush(useBeacon) {
     scanDataLayer();
     if (!queue.length) return;
+    if (toOpener) { sendToOpener(queue.splice(0, queue.length)); return; }
     var body = JSON.stringify(queue.splice(0, queue.length));
     if (useBeacon && navigator.sendBeacon) {
       if (navigator.sendBeacon(endpoint, new Blob([body], { type: 'text/plain' }))) return;
@@ -250,7 +283,13 @@
     flush: flush
   };
 
-  if (config) {
+  if (toOpener) {
+    flush(); // sends the page view right away, or warns now if there is no NavAIgate tab to send to
+    if (!openerWarned) {
+      console.log('[navaigate] recording events on ' + site + ' -> NavAIgate (' + dashboard + ').' +
+        (config ? ' Recording stops on a full page reload; paste again to resume.' : ''));
+    }
+  } else if (config) {
     console.log('[navaigate] recording events on ' + site + ' -> ' + endpoint +
       '. Recording stops on a full page reload; paste again to resume.');
   }
