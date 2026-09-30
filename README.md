@@ -4,7 +4,8 @@ Visualise funnels and user journeys from the analytics events your website alrea
 
 ## What it does
 
-- **Funnel**: pick events or pages as ordered steps; see conversion and drop-off per user (or per session).
+- **Funnel**: search events or pages and add them as ordered steps; see conversion and drop-off per user (or per
+  session), across all journeys or for one picked journey (e.g. to check your own recording completed the flow).
 - **Journey Graph / Timeline**: replay one user's or session's event sequence, optionally grouped by page.
 - **Insights**: event distribution, activity by hour, engagement per user.
 
@@ -35,8 +36,22 @@ remapped on the Import tab. None of them needs a server.
 ```bash
 npm install
 npm run dev:client   # the dashboard on :5173; all you need to record and analyse
-npm run build        # static files in dist/ (including collector.js); host them anywhere
 ```
+
+## Deploying
+
+`npm run build` writes a fully static site to `dist/` (including `collector.js` and the test page), so any static host
+works: Vercel, Netlify, Cloudflare Pages, S3 + CloudFront or an internal nginx. Build command `npm run build`, output
+directory `dist`. The site holds no data (recordings live in each person's browser), so putting a login in front is
+optional.
+
+- **Keep one stable address.** Recordings and the recording token are stored per origin; a new domain, or a
+  per-branch preview URL, starts with empty storage.
+- **Don't send `Cross-Origin-Opener-Policy: same-origin` from the dashboard.** It breaks the link to recording tabs,
+  just as it does on a recorded site.
+- **Serve it at the root of a domain.** Assets are loaded from `/`; a subpath (e.g. GitHub Pages project sites) needs
+  `base` set in `vite.config.js`.
+- **Fall back to `index.html` for unknown paths** if you enable the AI pages (`/voice`, `/chat`).
 
 ## Optional server
 
