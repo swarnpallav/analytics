@@ -1,0 +1,8 @@
+# Never upload collected events or secrets; Vercel builds from source.
+datasets/
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+.vite/
